@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-cyan-50/30 to-blue-100/20 py-12 sm:py-16 lg:py-20">
+    <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-cyan-50/30 to-blue-100/20 py-8 sm:py-12 lg:py-16">
       {/* Dégradés modernes en arrière-plan */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-0 top-0 h-full w-1/2 bg-gradient-to-br from-blue-400/10 via-cyan-400/5 to-transparent" />
@@ -29,29 +29,38 @@ export function HeroSection() {
 
 function HeroContent() {
   return (
-    <div className="flex flex-col justify-center space-y-8">
+    <div className="flex flex-col justify-center space-y-6">
+      {/* Badge 15 ans */}
+      <div className="animate-fade-in-up">
+        <span className="badge-premium">
+          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+          15 ans d'expertise certifiée
+        </span>
+      </div>
+      
       <div className="space-y-4">
-        <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-          Expert en{" "}
-          <span className="text-blue-600">isolation thermique</span>
+        <h1 className="animate-fade-in-up stagger-1">
+          Calorifugeage & Isolation
+          <br />
         </h1>
-        <p className="text-lg text-gray-600 sm:text-xl">
-          Améliorez votre confort et réduisez vos factures d'énergie grâce à
-          nos solutions d'isolation professionnelles et durables.
+        <p className="text-lead animate-fade-in-up stagger-2">
+          Solutions professionnelles d'isolation thermique et calorifugeage industriel. Confort optimal + économies garanties.
         </p>
       </div>
 
       <BenefitsList />
 
-      <div className="flex flex-col gap-4 sm:flex-row">
+      <div className="flex flex-col gap-3 sm:flex-row animate-fade-in-up stagger-3">
         <Button size="lg" asChild>
-          <Link href="/devis">
-            Demander un devis gratuit
+          <Link href="/devis">      
+            Devis gratuit 24h
             <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
         </Button>
         <Button size="lg" variant="outline" asChild>
-          <Link href="/services">Découvrir nos services</Link>
+          <Link href="/services">Nos services</Link>
         </Button>
       </div>
 
@@ -107,26 +116,26 @@ function TrustItem({
 function HeroImage() {
   return (
     <div className="relative lg:flex lg:items-center">
-      <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:shadow-3xl hover:scale-[1.02]">
+      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl image-border smooth-transition hover:scale-[1.02] image-overlay">
         <Image
-          src="/images/calo1.jpg"
+          src="/images/thercal1.jpg"
           alt="Installation d'isolation thermique professionnelle - Équipements modernes et performants"
           width={800}
           height={600}
-          className="h-full w-full object-cover transition-transform duration-700 hover:scale-110"
+          className="h-full w-full object-cover smooth-transition hover:scale-110"
           priority
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
         />
       </div>
       {/* Badge de certification */}
-      <div className="absolute bottom-4 right-4 rounded-lg bg-white/95 px-3 py-2 shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-105">
-        <div className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-blue-600 transition-all duration-300 hover:rotate-12">
-            <CheckCircle2 className="h-6 w-6 text-white" />
+      <div className="absolute bottom-4 right-4 rounded-xl bg-white/95 px-4 py-3 shadow-lg backdrop-blur-sm smooth-transition hover:scale-105 border border-blue-100">
+        <div className="flex items-center gap-3">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 smooth-transition hover:rotate-12">
+            <CheckCircle2 className="h-7 w-7 text-white" />
           </div>
           <div>
-            <p className="text-xs font-semibold text-gray-900">Certifié RGE</p>
-            <p className="text-[10px] text-gray-600">Qualité garantie</p>
+            <p className="text-sm font-bold text-gray-900">Certifié RGE</p>
+            <p className="text-xs text-gray-600">Qualité garantie</p>
           </div>
         </div>
       </div>

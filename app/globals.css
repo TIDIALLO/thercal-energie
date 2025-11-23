@@ -46,48 +46,51 @@
 :root {
   --radius: 0.625rem;
   
-  /* Charte graphique Thercal Energies */
-  /* Bleu ciel : #5BB4E5 / Bleu foncé : #0F3A54 */
+  /* ===== CHARTE GRAPHIQUE THERCAL ÉNERGIES ===== */
+  /* Bleu principal unique (brand color) : #2563EB */
+  --brand-blue: #2563EB;
+  --brand-blue-light: #3B82F6;
+  --brand-blue-dark: #1E40AF;
   
   --background: oklch(1 0 0);
-  --foreground: oklch(0.22 0.04 230);  /* Bleu foncé pour textes */
+  --foreground: oklch(0.15 0.01 240);  /* Texte principal sombre */
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.04 230);
+  --card-foreground: oklch(0.15 0.01 240);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.04 230);
+  --popover-foreground: oklch(0.15 0.01 240);
   
-  /* Couleur primaire : Bleu ciel #5BB4E5 */
-  --primary: oklch(0.68 0.10 230);  /* Bleu ciel vif */
+  /* Couleur primaire : Un seul bleu */
+  --primary: oklch(0.60 0.19 265);  /* Bleu principal #2563EB */
   --primary-foreground: oklch(1 0 0);  /* Blanc */
   
-  --secondary: oklch(0.97 0.01 230);  /* Bleu très clair */
-  --secondary-foreground: oklch(0.22 0.04 230);
+  --secondary: oklch(0.97 0.005 240);  /* Gris très clair */
+  --secondary-foreground: oklch(0.15 0.01 240);
   
-  --muted: oklch(0.96 0.01 230);
-  --muted-foreground: oklch(0.50 0.02 230);
+  --muted: oklch(0.96 0.005 240);
+  --muted-foreground: oklch(0.50 0.01 240);
   
-  --accent: oklch(0.92 0.03 230);  /* Bleu ciel léger */
-  --accent-foreground: oklch(0.22 0.04 230);
+  --accent: oklch(0.60 0.19 265);  /* Même bleu pour accents */
+  --accent-foreground: oklch(1 0 0);
   
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.90 0.01 230);
-  --input: oklch(0.90 0.01 230);
-  --ring: oklch(0.68 0.10 230);
+  --border: oklch(0.92 0.005 240);
+  --input: oklch(0.92 0.005 240);
+  --ring: oklch(0.60 0.19 265);
   
-  --chart-1: oklch(0.68 0.10 230);  /* Bleu ciel */
-  --chart-2: oklch(0.50 0.08 230);  /* Bleu moyen */
-  --chart-3: oklch(0.75 0.08 200);  /* Cyan */
-  --chart-4: oklch(0.60 0.12 250);  /* Bleu profond */
-  --chart-5: oklch(0.80 0.06 220);  /* Bleu clair */
+  --chart-1: oklch(0.60 0.19 265);  /* Bleu principal */
+  --chart-2: oklch(0.50 0.10 265);  /* Bleu foncé */
+  --chart-3: oklch(0.70 0.15 265);  /* Bleu clair */
+  --chart-4: oklch(0.55 0.15 265);  /* Bleu moyen */
+  --chart-5: oklch(0.65 0.12 265);  /* Bleu intermédiaire */
   
-  --sidebar: oklch(0.22 0.04 230);  /* Bleu foncé */
+  --sidebar: oklch(0.22 0.04 240);  /* Bleu foncé */
   --sidebar-foreground: oklch(1 0 0);
-  --sidebar-primary: oklch(0.68 0.10 230);
+  --sidebar-primary: oklch(0.60 0.19 265);
   --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.30 0.04 230);
+  --sidebar-accent: oklch(0.30 0.04 240);
   --sidebar-accent-foreground: oklch(1 0 0);
-  --sidebar-border: oklch(0.30 0.04 230);
-  --sidebar-ring: oklch(0.68 0.10 230);
+  --sidebar-border: oklch(0.30 0.04 240);
+  --sidebar-ring: oklch(0.60 0.19 265);
 }
 
 .dark {
@@ -128,14 +131,53 @@
   * {
     @apply border-border outline-ring/50;
   }
+  
   body {
     @apply bg-background text-foreground antialiased;
+  }
+  
+  /* ===== CHARTE TYPOGRAPHIQUE ===== */
+  /* Titres principaux */
+  h1, .h1 {
+    @apply text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight;
+  }
+  
+  h2, .h2 {
+    @apply text-3xl sm:text-4xl font-bold tracking-tight;
+  }
+  
+  h3, .h3 {
+    @apply text-2xl sm:text-3xl font-semibold;
+  }
+  
+  h4, .h4 {
+    @apply text-xl sm:text-2xl font-semibold;
+  }
+  
+  /* Paragraphes */
+  p, .body-text {
+    @apply text-base leading-relaxed text-gray-700;
+  }
+  
+  /* Texte d'accentuation (highlight) */
+  .text-highlight {
+    @apply font-semibold text-[var(--brand-blue)];
+  }
+  
+  /* Lead text (intro) */
+  .text-lead {
+    @apply text-lg sm:text-xl text-gray-600 leading-relaxed;
+  }
+  
+  /* Small text */
+  .text-small {
+    @apply text-sm text-gray-600;
   }
   
   /* Transitions fluides globales */
   a,
   button {
-    @apply transition-all duration-200;
+    @apply transition-all duration-300;
   }
   
   /* Scroll fluide */
@@ -196,8 +238,47 @@
   }
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
 .animate-fade-in {
   animation: fadeIn 0.5s ease-out;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out;
 }
 
 .animate-slide-in-left {
@@ -214,4 +295,57 @@
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
+}
+
+/* Animation de délai pour cartes en cascade */
+.stagger-1 {
+  animation-delay: 0.1s;
+}
+
+.stagger-2 {
+  animation-delay: 0.2s;
+}
+
+.stagger-3 {
+  animation-delay: 0.3s;
+}
+
+.stagger-4 {
+  animation-delay: 0.4s;
+}
+
+/* Overlay bleu sur images */
+.image-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.03) 0%, rgba(59, 130, 246, 0.02) 100%);
+  pointer-events: none;
+}
+
+/* Bordure subtile sur images */
+.image-border {
+  border: 1px solid rgba(37, 99, 235, 0.1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Card avec espacement */
+.card-spaced {
+  margin-bottom: 1.5rem;
+}
+
+/* Transition fluide des couleurs */
+.smooth-transition {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Header sticky avec ombre */
+.header-sticky {
+  @apply sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* Badge premium */
+.badge-premium {
+  @apply inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-sm font-semibold;
 }

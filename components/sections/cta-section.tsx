@@ -4,11 +4,11 @@ import { Button } from "@/components/ui/button";
 
 export function CTASection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-cyan-700 py-12 sm:py-14">
+    <section className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-cyan-600 to-blue-700 py-12 sm:py-14">
       {/* Motif de fond décoratif */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -left-20 top-10 h-96 w-96 rounded-full bg-cyan-400 opacity-20 blur-3xl" />
-        <div className="absolute -right-20 bottom-10 h-96 w-96 rounded-full bg-blue-400 opacity-20 blur-3xl" />
+        <div className="absolute -left-20 top-10 h-96 w-96 rounded-full bg-cyan-400 opacity-25 blur-3xl animate-pulse" />
+        <div className="absolute -right-20 bottom-10 h-96 w-96 rounded-full bg-blue-400 opacity-25 blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
       </div>
       
       <div className="container relative mx-auto px-4">
@@ -29,13 +29,13 @@ export function CTASection() {
             </Button>
             <Button size="lg" variant="outline" className="border-2 border-white bg-transparent text-white shadow-xl hover:bg-white hover:text-blue-600" asChild>
               <a href="tel:+33123456789">
-                <Phone className="mr-2 h-5 w-5" />
+                <Phone className="mr-2 h-5 w-5" />                                                                                                                                               
                 Appeler maintenant
               </a>
             </Button>
           </div>
         </div>
-      </div>
+      </div> ,
     </section>
   );
 }

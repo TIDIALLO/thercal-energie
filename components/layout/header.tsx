@@ -1,6 +1,8 @@
 import Link from "next/link";
-import { Phone, Mail } from "lucide-react";
+import Image from "next/image";
+import { Phone, Mail, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { AuthButton } from "@/components/auth/auth-button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,10 +16,10 @@ import { MobileNav } from "./mobile-nav";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 transition-all duration-300">
+    <header className="header-sticky">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          <div className="transition-transform duration-200 hover:scale-105">
+          <div className="pl-6 sm:pl-8 md:pl-12 transition-transform duration-200 hover:scale-105">
             <Logo />
           </div>
           <Navigation />
@@ -33,25 +35,17 @@ export function Header() {
 
 function Logo() {
   return (
-    <Link href="/" className="flex items-center space-x-2">
-      <div className="relative h-10 w-10">
-        {/* Placeholder - Remplacer par le vrai logo */}
-        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-sky-400 to-blue-600">
-          <span className="text-xl font-bold text-white">🔥</span>
-        </div>
-        {/* Une fois le logo ajouté dans public/, décommenter :
+    <Link href="/" className="flex items-center group smooth-transition hover:scale-105">
+      <div className="relative h-9 w-auto">
         <Image
-          src="/logo.svg"
-          alt="Thercal Énergie"
-          width={40}
-          height={40}
-          className="object-contain"
+          src="/thercal_energies_logo_blanc.png"
+          alt="Thercal Énergies - Expert en calorifugeage et isolation thermique"
+          width={130}
+          height={36}
+          className="object-contain smooth-transition group-hover:brightness-110"
+          priority
         />
-        */}
       </div>
-      <span className="hidden font-bold text-gray-900 sm:inline-block lg:text-lg">
-        Thercal Énergie
-      </span>
     </Link>
   );
 }
@@ -99,8 +93,24 @@ function Navigation() {
 
           <NavigationMenuItem>
             <NavigationMenuLink asChild>
+              <Link href="/#qui-sommes-nous" className={navigationMenuTriggerStyle()}>
+                Qui sommes-nous
+              </Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+
+          <NavigationMenuItem>
+            <NavigationMenuLink asChild>
               <Link href="/realisations" className={navigationMenuTriggerStyle()}>
                 Réalisations
+              </Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+
+          <NavigationMenuItem>
+            <NavigationMenuLink asChild>
+              <Link href="/blog" className={navigationMenuTriggerStyle()}>
+                Blog
               </Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
@@ -122,7 +132,7 @@ function ContactButtons() {
   return (
     <div className="flex items-center gap-2">
       <Button variant="ghost" size="icon" asChild className="hidden sm:flex">
-        <a href="tel:+33123456789" aria-label="Téléphone">
+        <a href="tel:+33134778520" aria-label="Téléphone">
           <Phone className="h-5 w-5" />
         </a>
       </Button>
@@ -131,7 +141,8 @@ function ContactButtons() {
           <Mail className="h-5 w-5" />
         </a>
       </Button>
-      <Button asChild>
+      <AuthButton />
+      <Button asChild className="hidden lg:flex">
         <Link href="/devis">Devis gratuit</Link>
       </Button>
     </div>
@@ -149,10 +160,10 @@ function ServiceItem({ href, title, description }: ServiceItemProps) {
     <li>
       <Link
         href={href}
-        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-all duration-200 hover:bg-accent hover:text-accent-foreground hover:scale-[1.02] focus:bg-accent focus:text-accent-foreground"
+        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none smooth-transition hover:bg-blue-50 hover:border-l-4 hover:border-blue-600 hover:pl-4 focus:bg-blue-50"
       >
-        <div className="text-sm font-medium leading-none">{title}</div>
-        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+        <div className="text-sm font-medium leading-none text-gray-900">{title}</div>
+        <p className="line-clamp-2 text-sm leading-snug text-gray-600">
           {description}
         </p>
       </Link>

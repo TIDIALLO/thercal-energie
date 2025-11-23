@@ -1,0 +1,23 @@
+<svg width="240" height="60" viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cercle avec arcs bleus -->
+  <g transform="translate(30, 30)">
+    <!-- Arc supérieur gauche -->
+    <path d="M -18 -8 A 20 20 0 0 1 -8 -18" stroke="#2B8FE8" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <!-- Arc supérieur droit -->
+    <path d="M 8 -18 A 20 20 0 0 1 18 -8" stroke="#2B8FE8" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <!-- Arc inférieur droit -->
+    <path d="M 18 8 A 20 20 0 0 1 8 18" stroke="#2B8FE8" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <!-- Arc inférieur gauche -->
+    <path d="M -8 18 A 20 20 0 0 1 -18 8" stroke="#2B8FE8" stroke-width="5" fill="none" stroke-linecap="round"/>
+    
+    <!-- Lettre T au centre -->
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="central">T</text>
+  </g>
+  
+  <!-- Texte THERCAL -->
+  <text x="70" y="27" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white" letter-spacing="2">THERCAL</text>
+  
+  <!-- Texte ENERGIES -->
+  <text x="70" y="45" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#2B8FE8" letter-spacing="4">ENERGIES</text>
+</svg>
+

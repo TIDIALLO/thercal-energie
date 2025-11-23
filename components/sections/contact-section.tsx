@@ -10,11 +10,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 export function ContactSection() {
   return (
-    <section id="contact" className="relative overflow-hidden bg-gradient-to-b from-blue-50/30 via-white to-gray-50 py-10 sm:py-14">
+    <section id="contact" className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-cyan-50 to-white py-16 sm:py-20">
       {/* Motif de fond décoratif animé */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute left-1/4 top-10 h-96 w-96 rounded-full bg-gradient-to-br from-blue-400 to-cyan-400 opacity-10 blur-3xl animate-pulse" style={{ animationDelay: '0.7s' }} />
-        <div className="absolute right-1/3 bottom-20 h-80 w-80 rounded-full bg-gradient-to-br from-cyan-400 to-blue-400 opacity-10 blur-3xl animate-pulse" style={{ animationDelay: '1.8s' }} />
+        <div className="absolute left-1/4 top-10 h-96 w-96 rounded-full bg-gradient-to-br from-cyan-400 to-blue-400 opacity-20 blur-3xl animate-pulse" style={{ animationDelay: '0.7s' }} />
+        <div className="absolute right-1/3 bottom-20 h-80 w-80 rounded-full bg-gradient-to-br from-blue-400 to-cyan-400 opacity-15 blur-3xl animate-pulse" style={{ animationDelay: '1.8s' }} />
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-purple-400 to-pink-400 opacity-10 blur-3xl animate-pulse" style={{ animationDelay: '3s' }} />
       </div>
       
       <div className="container relative mx-auto px-4">
@@ -30,13 +31,18 @@ export function ContactSection() {
 
 function SectionHeader() {
   return (
-    <div className="mx-auto mb-16 max-w-2xl text-center">
+    <div className="mx-auto mb-16 max-w-2xl text-center animate-fade-in-up">
       <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
         Contactez-nous
       </h2>
-      <p className="text-lg text-gray-600">
+      <p className="text-lg text-gray-700">
         Une question ? Un projet ? N'hésitez pas à nous contacter
       </p>
+      <div className="mt-6 flex justify-center gap-2">
+        <span className="inline-block h-1 w-12 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 shadow-md"></span>
+        <span className="inline-block h-1 w-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 shadow-md"></span>
+        <span className="inline-block h-1 w-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 shadow-md"></span>
+      </div>
     </div>
   );
 }
@@ -44,6 +50,7 @@ function SectionHeader() {
 function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [files, setFiles] = useState<File[]>([]);
+  const [focusedField, setFocusedField] = useState<string | null>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFiles = Array.from(e.target.files || []);
@@ -68,54 +75,99 @@ function ContactForm() {
   };
 
   return (
-    <Card className="shadow-xl">
-      <CardHeader className="pb-4">
-        <CardTitle className="text-xl">Envoyez-nous un message</CardTitle>
-        <CardDescription className="text-sm">
-          Remplissez le formulaire ci-dessous et nous vous répondrons rapidement
+    <Card className="shadow-2xl border-blue-200 bg-white/95 backdrop-blur-md animate-fade-in-up stagger-1 overflow-hidden group hover:shadow-cyan-500/30 smooth-transition relative">
+      {/* Bordure animée au hover */}
+      <div className="absolute top-0 inset-x-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500 to-blue-500/0 opacity-0 group-hover:opacity-100 smooth-transition" style={{ height: '3px' }} />
+      
+      <CardHeader className="pb-4 border-b border-blue-100 relative">
+        <CardTitle className="text-xl text-gray-900 flex items-center gap-2">
+          <Send className="h-5 w-5 text-blue-600" />
+          Envoyez-nous un message
+        </CardTitle>
+        <CardDescription className="text-sm text-gray-600">
+          Remplissez le formulaire ci-dessous et nous vous répondrons en moins de 24h
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-5">
           <div className="grid gap-4 sm:grid-cols-2">
-            <div className="space-y-2">
-              <Label htmlFor="firstName">Prénom</Label>
-              <Input id="firstName" name="firstName" required />
+            <div className="space-y-2 group/field">
+              <Label htmlFor="firstName" className="text-gray-700 font-medium smooth-transition group-focus-within/field:text-blue-600">Prénom</Label>
+              <Input 
+                id="firstName" 
+                name="firstName" 
+                required 
+                className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-400 smooth-transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 hover:border-blue-400"
+                onFocus={() => setFocusedField('firstName')}
+                onBlur={() => setFocusedField(null)}
+              />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="lastName">Nom</Label>
-              <Input id="lastName" name="lastName" required />
+            <div className="space-y-2 group/field">
+              <Label htmlFor="lastName" className="text-gray-700 font-medium smooth-transition group-focus-within/field:text-blue-600">Nom</Label>
+              <Input 
+                id="lastName" 
+                name="lastName" 
+                required 
+                className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-400 smooth-transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 hover:border-blue-400"
+                onFocus={() => setFocusedField('lastName')}
+                onBlur={() => setFocusedField(null)}
+              />
             </div>
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
-            <Input id="email" name="email" type="email" required />
+          <div className="space-y-2 group/field">
+            <Label htmlFor="email" className="text-gray-700 font-medium smooth-transition group-focus-within/field:text-blue-600">Email</Label>
+            <Input 
+              id="email" 
+              name="email" 
+              type="email" 
+              required 
+              className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-400 smooth-transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 hover:border-blue-400"
+              onFocus={() => setFocusedField('email')}
+              onBlur={() => setFocusedField(null)}
+            />
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="phone">Téléphone</Label>
-            <Input id="phone" name="phone" type="tel" />
+          <div className="space-y-2 group/field">
+            <Label htmlFor="phone" className="text-gray-700 font-medium smooth-transition group-focus-within/field:text-blue-600">Téléphone</Label>
+            <Input 
+              id="phone" 
+              name="phone" 
+              type="tel" 
+              className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-400 smooth-transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 hover:border-blue-400"
+              onFocus={() => setFocusedField('phone')}
+              onBlur={() => setFocusedField(null)}
+            />
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="subject">Sujet</Label>
-            <Input id="subject" name="subject" required />
+          <div className="space-y-2 group/field">
+            <Label htmlFor="subject" className="text-gray-700 font-medium smooth-transition group-focus-within/field:text-blue-600">Sujet</Label>
+            <Input 
+              id="subject" 
+              name="subject" 
+              required 
+              className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-400 smooth-transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 hover:border-blue-400"
+              onFocus={() => setFocusedField('subject')}
+              onBlur={() => setFocusedField(null)}
+            />
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="message">Message</Label>
+          <div className="space-y-2 group/field">
+            <Label htmlFor="message" className="text-gray-700 font-medium smooth-transition group-focus-within/field:text-blue-600">Message</Label>
             <Textarea
               id="message"
               name="message"
               rows={5}
               required
-              placeholder="Décrivez votre projet..."
+              placeholder="Décrivez votre projet d'isolation thermique..."
+              className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-400 smooth-transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 resize-none hover:border-blue-400"
+              onFocus={() => setFocusedField('message')}
+              onBlur={() => setFocusedField(null)}
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="files">Pièces jointes (optionnel)</Label>
+            <Label htmlFor="files" className="text-gray-700 font-medium">Pièces jointes (optionnel)</Label>
             <div className="space-y-3">
               <div className="flex items-center gap-2">
                 <Input
@@ -125,25 +177,25 @@ function ContactForm() {
                   multiple
                   accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.gif"
                   onChange={handleFileChange}
-                  className="cursor-pointer"
+                  className="cursor-pointer bg-white border-gray-300 text-gray-900 file:bg-blue-600 file:text-white file:border-0 file:px-4 file:py-2 file:rounded-md file:mr-4 hover:file:bg-blue-500"
                 />
-                <Upload className="h-5 w-5 text-gray-400" />
+                <Upload className="h-5 w-5 text-gray-500" />
               </div>
               
               {files.length > 0 && (
                 <div className="space-y-2">
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-gray-700">
                     {files.length} fichier{files.length > 1 ? "s" : ""} sélectionné{files.length > 1 ? "s" : ""} :
                   </p>
                   <ul className="space-y-2">
                     {files.map((file, index) => (
                       <li
                         key={index}
-                        className="flex items-center justify-between rounded-lg border bg-gray-50 px-3 py-2 text-sm"
+                        className="flex items-center justify-between rounded-lg border border-blue-200 bg-blue-50 px-3 py-2 text-sm"
                       >
                         <span className="flex items-center gap-2">
                           <Upload className="h-4 w-4 text-blue-600" />
-                          <span className="truncate">{file.name}</span>
+                          <span className="truncate text-gray-900">{file.name}</span>
                           <span className="text-xs text-gray-500">
                             ({formatFileSize(file.size)})
                           </span>
@@ -153,9 +205,9 @@ function ContactForm() {
                           variant="ghost"
                           size="sm"
                           onClick={() => removeFile(index)}
-                          className="h-6 w-6 p-0"
+                          className="h-6 w-6 p-0 hover:bg-blue-100"
                         >
-                          <X className="h-4 w-4" />
+                          <X className="h-4 w-4 text-gray-500" />
                         </Button>
                       </li>
                     ))}
@@ -169,13 +221,17 @@ function ContactForm() {
             </div>
           </div>
 
-          <Button type="submit" className="w-full" disabled={isSubmitting}>
+          <Button type="submit" className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-lg hover:shadow-2xl hover:shadow-cyan-500/50 smooth-transition hover:scale-[1.02] relative overflow-hidden group/btn" disabled={isSubmitting}>
+            <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-1000" />
             {isSubmitting ? (
-              "Envoi en cours..."
+              <span className="flex items-center gap-2">
+                <span className="inline-block h-4 w-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                Envoi en cours...
+              </span>
             ) : (
               <>
                 Envoyer le message
-                <Send className="ml-2 h-4 w-4" />
+                <Send className="ml-2 h-4 w-4 smooth-transition group-hover/btn:translate-x-1" />
               </>
             )}
           </Button>
@@ -187,37 +243,55 @@ function ContactForm() {
 
 function ContactInfo() {
   return (
-    <div className="space-y-8">
-      <div>
-        <h3 className="mb-6 text-2xl font-bold text-gray-900">
-          Nos coordonnées
-        </h3>
-        <div className="space-y-4">
+    <div className="space-y-6">
+      <Card className="shadow-xl border-blue-200 bg-white/95 backdrop-blur-sm animate-fade-in-up stagger-2 overflow-hidden group hover:shadow-blue-500/30 smooth-transition">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-cyan-500/5 opacity-0 group-hover:opacity-100 smooth-transition" />
+        <CardHeader className="relative pb-3 border-b border-blue-100">
+          <CardTitle className="text-xl text-gray-900 flex items-center gap-2">
+            <Phone className="h-5 w-5 text-blue-600" />
+            Nos coordonnées
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="relative pt-6 space-y-5">
           {CONTACT_ITEMS.map((item) => (
             <ContactItem key={item.label} {...item} />
           ))}
-        </div>
-      </div>
+        </CardContent>
+      </Card>
 
-      <div>
-        <h3 className="mb-4 text-xl font-semibold text-gray-900">
-          Horaires d'ouverture
-        </h3>
-        <div className="space-y-2 text-gray-600">
-          <p>Lundi - Vendredi : 8h00 - 18h00</p>
-          <p>Samedi : 9h00 - 12h00</p>
-          <p>Dimanche : Fermé</p>
-        </div>
-      </div>
+      <Card className="shadow-xl border-blue-200 bg-white/95 backdrop-blur-sm animate-fade-in-up stagger-3 overflow-hidden group hover:shadow-cyan-500/30 smooth-transition">
+        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-blue-500/5 opacity-0 group-hover:opacity-100 smooth-transition" />
+        <CardHeader className="relative pb-3 border-b border-blue-100">
+          <CardTitle className="text-lg text-gray-900">⏰ Horaires d'ouverture</CardTitle>
+        </CardHeader>
+        <CardContent className="relative pt-5 space-y-2">
+          <div className="flex justify-between items-center text-sm">
+            <span className="text-gray-700">Lundi - Vendredi</span>
+            <span className="font-semibold text-blue-600">8h00 - 18h00</span>
+          </div>
+          <div className="flex justify-between items-center text-sm">
+            <span className="text-gray-700">Samedi</span>
+            <span className="font-semibold text-blue-600">9h00 - 12h00</span>
+          </div>
+          <div className="flex justify-between items-center text-sm">
+            <span className="text-gray-700">Dimanche</span>
+            <span className="font-semibold text-red-500">Fermé</span>
+          </div>
+        </CardContent>
+      </Card>
 
-      <div className="rounded-xl bg-gradient-to-br from-blue-50 to-cyan-50 p-6 shadow-lg border border-blue-100">
-        <h3 className="mb-2 text-lg font-semibold text-gray-900">
-          Intervention rapide
-        </h3>
-        <p className="text-base text-gray-600">
-          Nous intervenons dans toute la région Île-de-France. Devis gratuit
-          sous 24h.
-        </p>
+      <div className="rounded-xl bg-gradient-to-br from-cyan-500 via-blue-500 to-blue-600 p-6 shadow-2xl animate-fade-in-up stagger-4 smooth-transition hover:shadow-blue-500/40 hover:-translate-y-1 relative overflow-hidden group">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-white/10 opacity-0 group-hover:opacity-100 smooth-transition" />
+        <div className="relative">
+          <h3 className="mb-2 text-lg font-bold text-white flex items-center gap-2">
+            <span className="text-2xl">⚡</span>
+            Intervention rapide
+          </h3>
+          <p className="text-sm text-blue-50 leading-relaxed">
+            Nous intervenons dans toute la région <span className="font-bold text-white">Île-de-France</span>. 
+            Devis gratuit sous <span className="font-bold text-white">24h</span>.
+          </p>
+        </div>
       </div>
     </div>
   );
@@ -232,20 +306,20 @@ interface ContactItemProps {
 
 function ContactItem({ icon: Icon, label, value, href }: ContactItemProps) {
   const content = (
-    <div className="flex items-start gap-3 group">
-      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 text-white shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
-        <Icon className="h-6 w-6" />
+    <div className="flex items-start gap-3 group p-3 rounded-lg smooth-transition hover:bg-blue-50">
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 text-white shadow-lg smooth-transition group-hover:scale-110 group-hover:shadow-blue-500/50">
+        <Icon className="h-5 w-5" />
       </div>
-      <div>
-        <div className="text-base font-semibold text-gray-900">{label}</div>
-        <div className="text-sm text-gray-600">{value}</div>
+      <div className="flex-1">
+        <div className="text-xs font-medium text-gray-500 uppercase tracking-wide">{label}</div>
+        <div className="text-sm text-gray-900 font-medium smooth-transition group-hover:text-blue-600">{value}</div>
       </div>
     </div>
   );
 
   if (href) {
     return (
-      <a href={href} className="block transition-all duration-300 hover:translate-x-1">
+      <a href={href} className="block">
         {content}
       </a>
     );
@@ -266,8 +340,8 @@ const CONTACT_ITEMS = [
   {
     icon: Phone,
     label: "Téléphone",
-    value: "+33 1 23 45 67 89",
-    href: "tel:+33123456789",
+    value: "+33 1 34 77 85 20",
+    href: "tel:+33134778520",
   },
   {
     icon: Mail,
@@ -278,7 +352,7 @@ const CONTACT_ITEMS = [
   {
     icon: MapPin,
     label: "Adresse",
-    value: "123 Rue de l'Isolation, 75001 Paris",
+    value: "2 rue Pierre de RONSARD, 78200 MANTES LA JOLIE",
   },
 ] as const;
 

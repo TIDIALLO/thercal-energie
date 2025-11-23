@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { FloatingCTA } from "@/components/ui/floating-cta";
+import { AuthProvider } from "@/lib/auth-context";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -11,13 +13,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Thercal Énergie - Expert en Isolation Thermique",
-  description: "Spécialiste de l'isolation thermique pour améliorer votre confort et réduire vos factures d'énergie. Devis gratuit et rapide.",
-  keywords: ["isolation thermique", "isolation combles", "isolation murs", "économie énergie", "rénovation énergétique"],
-  authors: [{ name: "Thercal Énergie" }],
+  title: "Thercal Énergies - Expert en Calorifugeage et Isolation Thermique",
+  description: "Spécialiste du calorifugeage industriel et de l'isolation thermique pour améliorer votre confort et réduire vos factures d'énergie jusqu'à 30%. Devis gratuit 24h.",
+  keywords: ["calorifugeage", "isolation thermique", "isolation combles", "isolation murs", "économie énergie", "rénovation énergétique", "calorifugeage industriel", "efficacité énergétique"],
+  authors: [{ name: "Thercal Énergies" }],
   openGraph: {
-    title: "Thercal Énergie - Expert en Isolation Thermique",
-    description: "Spécialiste de l'isolation thermique pour améliorer votre confort et réduire vos factures d'énergie.",
+    title: "Thercal Énergies - Expert en Calorifugeage et Isolation Thermique",
+    description: "Spécialiste du calorifugeage industriel et de l'isolation thermique. Maximisez l'efficacité énergétique de vos installations.",
     type: "website",
     locale: "fr_FR",
   },
@@ -41,9 +43,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="fr" className={inter.variable}>
       <body className="min-h-screen bg-white font-sans antialiased">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <AuthProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <FloatingCTA />
+        </AuthProvider>
       </body>
     </html>
   );

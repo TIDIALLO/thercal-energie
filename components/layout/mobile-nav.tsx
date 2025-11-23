@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -36,14 +37,16 @@ export function MobileNav() {
         <DialogContent className="h-full max-w-full p-0 sm:max-w-md">
           <DialogHeader className="border-b p-4">
             <div className="flex items-center justify-between">
-              <DialogTitle className="flex items-center gap-2">
-                <div className="relative h-10 w-10">
-                  {/* Placeholder - Remplacer par le vrai logo */}
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-sky-400 to-blue-600">
-                    <span className="text-xl font-bold text-white">🔥</span>
-                  </div>
+              <DialogTitle className="flex items-center">
+                <div className="relative h-7 w-auto">
+                  <Image
+                    src="/thercal_energies_logo.png"
+                    alt="Thercal Énergies"
+                    width={90}
+                    height={28}
+                    className="object-contain"
+                  />
                 </div>
-                <span className="font-bold text-gray-900">Thercal Énergie</span>
               </DialogTitle>
               <Button
                 variant="ghost"
@@ -100,6 +103,10 @@ export function MobileNav() {
 
               <NavItem href="/realisations" onClick={() => setIsOpen(false)}>
                 Réalisations
+              </NavItem>
+
+              <NavItem href="/blog" onClick={() => setIsOpen(false)}>
+                Blog
               </NavItem>
 
               <NavItem href="/contact" onClick={() => setIsOpen(false)}>
