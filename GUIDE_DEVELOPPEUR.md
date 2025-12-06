@@ -1,6 +1,6 @@
-# Guide Développeur - Thercal Énergie
+# Guide Développeur - THERCAL ENERGIES
 
-Ce guide explique l'architecture, les choix techniques et le fonctionnement du site web Thercal Énergie pour t'aider à comprendre et maintenir le code.
+Ce guide explique l'architecture, les choix techniques et le fonctionnement du site web THERCAL ENERGIES pour t'aider à comprendre et maintenir le code.
 
 ## 📚 Table des matières
 
@@ -327,7 +327,7 @@ Chaque page a des métadonnées optimisées :
 ```typescript
 // app/services/isolation-combles/page.tsx
 export const metadata: Metadata = {
-  title: "Isolation des Combles | Thercal Énergie",
+  title: "Isolation des Combles | THERCAL ENERGIES",
   description: "Expert en isolation des combles...",
 };
 ```
@@ -368,7 +368,7 @@ app/
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Ma Nouvelle Page | Thercal Énergie",
+  title: "Ma Nouvelle Page | THERCAL ENERGIES",
   description: "Description de ma page",
 };
 
@@ -397,7 +397,7 @@ app/services/
 
 ```typescript
 export const metadata: Metadata = {
-  title: "Mon Nouveau Service | Thercal Énergie",
+  title: "Mon Nouveau Service | THERCAL ENERGIES",
   description: "Description du service",
 };
 

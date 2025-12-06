@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 export const metadata: Metadata = {
-  title: "Isolation de Toiture - Sarking & Rampants | Thercal Énergie",
+  title: "Isolation de Toiture - Sarking & Rampants | THERCAL ENERGIES",
   description: "Expert en isolation de toiture : sarking, isolation des rampants. Protection optimale contre les intempéries et amélioration thermique. Devis gratuit.",
 };
 

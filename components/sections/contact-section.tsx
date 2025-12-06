@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Phone, Mail, MapPin, Send, Upload, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,12 +11,15 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 export function ContactSection() {
   return (
-    <section id="contact" className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-cyan-50 to-white py-16 sm:py-20">
-      {/* Motif de fond décoratif animé */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute left-1/4 top-10 h-96 w-96 rounded-full bg-gradient-to-br from-cyan-400 to-blue-400 opacity-20 blur-3xl animate-pulse" style={{ animationDelay: '0.7s' }} />
-        <div className="absolute right-1/3 bottom-20 h-80 w-80 rounded-full bg-gradient-to-br from-blue-400 to-cyan-400 opacity-15 blur-3xl animate-pulse" style={{ animationDelay: '1.8s' }} />
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-purple-400 to-pink-400 opacity-10 blur-3xl animate-pulse" style={{ animationDelay: '3s' }} />
+    <section id="contact" className="relative overflow-hidden py-16 sm:py-20">
+      <div className="absolute inset-0">
+        <Image
+          src="/images/thercal6.jpg"
+          alt="Fond formulaire de contact"
+          fill
+          className="object-cover opacity-30"
+        />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.96),_rgba(224,247,255,0.9),_rgba(255,255,255,0.96))]" />
       </div>
       
       <div className="container relative mx-auto px-4">

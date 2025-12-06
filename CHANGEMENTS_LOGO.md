@@ -2,7 +2,7 @@
 
 ## 🎨 Charte Graphique Mise à Jour
 
-### Couleurs du site adaptées au logo Thercal Energies
+### Couleurs du site adaptées au logo THERCAL ENERGIES
 
 **Fichier modifié :** `app/globals.css`
 
@@ -127,7 +127,7 @@ import Image from "next/image";
 
 <Image
   src="/logo.svg"
-  alt="Thercal Énergie"
+  alt="THERCAL ENERGIES"
   width={120}
   height={40}
   className="h-10 w-auto object-contain"

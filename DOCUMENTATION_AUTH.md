@@ -2,7 +2,7 @@
 
 ## Vue d'ensemble
 
-Le système d'authentification de Thercal Énergies est conçu pour être **simple, sécurisé et évolutif**. Actuellement en version de développement, il utilise le localStorage pour la démonstration, mais est prêt à être migré vers une solution de production complète.
+Le système d'authentification de THERCAL ENERGIES est conçu pour être **simple, sécurisé et évolutif**. Actuellement en version de développement, il utilise le localStorage pour la démonstration, mais est prêt à être migré vers une solution de production complète.
 
 ---
 
@@ -562,6 +562,6 @@ export async function fetchProtectedData() {
 
 ---
 
-**Maintenu par** : Équipe Thercal Énergies  
+**Maintenu par** : Équipe THERCAL ENERGIES  
 **Dernière mise à jour** : Novembre 2024
 

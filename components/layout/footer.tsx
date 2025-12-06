@@ -20,8 +20,6 @@ export function Footer() {
           <ContactInfo />
         </div>
         <Separator className="my-8 bg-slate-800" />
-        <SiteMap />
-        <Separator className="my-8 bg-slate-800" />
         <BottomBar />
       </div>
     </footer>
@@ -35,7 +33,7 @@ function CompanyInfo() {
         <div className="relative h-8 w-auto smooth-transition group-hover:scale-105">
           <Image
             src="/thercal_energies_logo.png"
-            alt="Thercal Énergies"
+            alt="THERCAL ENERGIES"
             width={100}
             height={32}
             className="object-contain smooth-transition group-hover:brightness-110"
@@ -43,24 +41,8 @@ function CompanyInfo() {
         </div>
       </div>
       <p className="text-sm leading-relaxed text-slate-300">
-        Expert en calorifugeage et isolation thermique depuis plus de 15 ans.
+        Expert en calorifugeage et isolation thermique depuis plusieurs années d'expériences.
       </p>
-      
-      {/* Certifications */}
-      <div className="flex flex-wrap gap-2">
-        <span className="inline-flex items-center gap-1 px-3 py-2 rounded-full bg-blue-500/20 border border-blue-500/40 text-xs font-semibold text-blue-400 smooth-transition hover:bg-blue-500/30 hover:border-blue-400 hover:scale-105">
-          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-          </svg>
-          RGE
-        </span>
-        <span className="inline-flex items-center gap-1 px-3 py-2 rounded-full bg-green-500/20 border border-green-500/40 text-xs font-semibold text-green-400 smooth-transition hover:bg-green-500/30 hover:border-green-400 hover:scale-105">
-          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-          </svg>
-          Qualibat
-        </span>
-      </div>
       <div className="flex gap-3">
         <SocialLink href="https://facebook.com" icon={Facebook} label="Facebook" />
         <SocialLink href="https://linkedin.com" icon={Linkedin} label="LinkedIn" />
@@ -139,39 +121,12 @@ function ContactInfo() {
   );
 }
 
-function SiteMap() {
-  return (
-    <div className="text-center">
-      <h4 className="text-sm font-semibold text-slate-300 mb-4">Plan du site</h4>
-      <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-slate-400">
-        <Link href="/" className="hover:text-cyan-400 smooth-transition">Accueil</Link>
-        <span className="text-slate-700">•</span>
-        <Link href="/services/isolation-combles" className="hover:text-cyan-400 smooth-transition">Isolation Combles</Link>
-        <span className="text-slate-700">•</span>
-        <Link href="/services/isolation-murs" className="hover:text-cyan-400 smooth-transition">Isolation Murs</Link>
-        <span className="text-slate-700">•</span>
-        <Link href="/services/isolation-sols" className="hover:text-cyan-400 smooth-transition">Isolation Sols</Link>
-        <span className="text-slate-700">•</span>
-        <Link href="/services/isolation-toiture" className="hover:text-cyan-400 smooth-transition">Isolation Toiture</Link>
-        <span className="text-slate-700">•</span>
-        <Link href="/realisations" className="hover:text-cyan-400 smooth-transition">Réalisations</Link>
-        <span className="text-slate-700">•</span>
-        <Link href="/blog" className="hover:text-cyan-400 smooth-transition">Blog</Link>
-        <span className="text-slate-700">•</span>
-        <Link href="/contact" className="hover:text-cyan-400 smooth-transition">Contact</Link>
-        <span className="text-slate-700">•</span>
-        <Link href="/devis" className="hover:text-cyan-400 smooth-transition">Devis Gratuit</Link>
-      </div>
-    </div>
-  );
-}
-
 function BottomBar() {
   return (
     <div className="flex flex-col items-center justify-between gap-4 text-sm text-slate-400 sm:flex-row">
       <p className="flex items-center gap-2">
         <span>© {new Date().getFullYear()}</span>
-        <span className="text-cyan-400 font-semibold">Thercal Énergies</span>
+        <span className="text-cyan-400 font-semibold">THERCAL ENERGIES</span>
         <span>•</span>
         <span>Tous droits réservés</span>
       </p>

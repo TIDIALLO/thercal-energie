@@ -1,15 +1,19 @@
+ "use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useMemo, useState, useEffect } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-cyan-50/30 to-blue-100/20 py-8 sm:py-12 lg:py-16">
+    <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top,_#ffffff_0%,_#e0f2ff_45%,_#f8fbff_100%)] py-10 sm:py-16 lg:py-20">
       {/* Dégradés modernes en arrière-plan */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-0 top-0 h-full w-1/2 bg-gradient-to-br from-blue-400/10 via-cyan-400/5 to-transparent" />
-        <div className="absolute right-0 bottom-0 h-full w-1/2 bg-gradient-to-tl from-blue-400/10 via-purple-400/5 to-transparent" />
+        <div className="absolute left-[-15%] top-[-20%] h-[460px] w-[460px] rounded-full bg-white opacity-80 blur-3xl" />
+        <div className="absolute right-[-5%] bottom-[-25%] h-[420px] w-[420px] rounded-full bg-blue-100 opacity-70 blur-3xl" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle,_rgba(255,255,255,0.85),_rgba(219,234,254,0.4),_transparent_60%)]" />
       </div>
       
       <div className="container relative mx-auto px-4">
@@ -30,22 +34,17 @@ export function HeroSection() {
 function HeroContent() {
   return (
     <div className="flex flex-col justify-center space-y-6">
-      {/* Badge 15 ans */}
-      <div className="animate-fade-in-up">
-        <span className="badge-premium">
-          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-          </svg>
-          15 ans d'expertise certifiée
-        </span>
-      </div>
-      
-      <div className="space-y-4">
-        <h1 className="animate-fade-in-up stagger-1">
-          Calorifugeage & Isolation
-          <br />
+      <div className="space-y-5">
+        <h1 className="space-y-2 group">
+          <span className="block text-[clamp(2.5rem,5vw,3.7rem)] font-black tracking-tight text-slate-900 animate-fade-in-up">
+            Isolation Thermique
+          </span>
+          <span className="relative inline-flex flex-wrap items-center gap-3 text-[clamp(2.2rem,4.6vw,3.4rem)] font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-cyan-500 to-blue-400 animate-fade-in-up">
+            de Tuyauteries Industrielles
+            <span className="absolute -bottom-1 left-0 h-1 w-full origin-left scale-x-0 rounded-full bg-gradient-to-r from-blue-400 to-cyan-300 shadow-[0_0_20px_rgba(59,130,246,0.45)] transition-transform duration-700 group-hover:scale-x-100" />
+          </span>
         </h1>
-        <p className="text-lead animate-fade-in-up stagger-2">
+        <p className="text-lead animate-fade-in-up stagger-2 text-slate-800">
           Solutions professionnelles d'isolation thermique et calorifugeage industriel. Confort optimal + économies garanties.
         </p>
       </div>
@@ -63,8 +62,6 @@ function HeroContent() {
           <Link href="/services">Nos services</Link>
         </Button>
       </div>
-
-      <TrustIndicators />
     </div>
   );
 }
@@ -88,56 +85,39 @@ function BenefitItem({ text }: { readonly text: string }) {
   );
 }
 
-function TrustIndicators() {
-  return (
-    <div className="flex flex-wrap items-center gap-6 border-t pt-6">
-      <TrustItem value="15+" label="ans d'expérience" />
-      <TrustItem value="2000+" label="projets réalisés" />
-      <TrustItem value="98%" label="clients satisfaits" />
-    </div>
-  );
-}
-
-function TrustItem({
-  value,
-  label,
-}: {
-  readonly value: string;
-  readonly label: string;
-}) {
-  return (
-    <div>
-      <div className="text-2xl font-bold text-blue-600">{value}</div>
-      <div className="text-sm text-gray-600">{label}</div>
-    </div>
-  );
-}
-
 function HeroImage() {
+  const images = useMemo(
+    () => [
+      { src: "/images/thercal1.jpg", alt: "Installation calorifugeage - réseau vapeur" },
+      { src: "/images/thercal2.jpg", alt: "Calorifugeage industriel sur site" },
+      { src: "/images/thercal3.jpg", alt: "Équipe THERCAL ENERGIES en intervention" },
+    ],
+    []
+  );
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [images.length]);
+
   return (
     <div className="relative lg:flex lg:items-center">
-      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl image-border smooth-transition hover:scale-[1.02] image-overlay">
-        <Image
-          src="/images/thercal1.jpg"
-          alt="Installation d'isolation thermique professionnelle - Équipements modernes et performants"
-          width={800}
-          height={600}
-          className="h-full w-full object-cover smooth-transition hover:scale-110"
-          priority
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
-        />
-      </div>
-      {/* Badge de certification */}
-      <div className="absolute bottom-4 right-4 rounded-xl bg-white/95 px-4 py-3 shadow-lg backdrop-blur-sm smooth-transition hover:scale-105 border border-blue-100">
-        <div className="flex items-center gap-3">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 smooth-transition hover:rotate-12">
-            <CheckCircle2 className="h-7 w-7 text-white" />
-          </div>
-          <div>
-            <p className="text-sm font-bold text-gray-900">Certifié RGE</p>
-            <p className="text-xs text-gray-600">Qualité garantie</p>
-          </div>
-        </div>
+      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl image-border smooth-transition">
+        {images.map((image, i) => (
+          <Image
+            key={image.src}
+            src={image.src}
+            alt={image.alt}
+            width={800}
+            height={600}
+            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${i === index ? "opacity-100" : "opacity-0"}`}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
+            priority={i === 0}
+          />
+        ))}
       </div>
     </div>
   );
@@ -153,7 +133,7 @@ function BackgroundPattern() {
 }
 
 const BENEFITS = [
-  "Jusqu'à 30% d'économies sur vos factures d'énergie",
+  "Jusqu'à 20% d'économies sur vos factures d'énergie",
   "Confort thermique optimal été comme hiver",
   "Matériaux écologiques et certifiés",
   "Garantie décennale sur tous nos travaux",

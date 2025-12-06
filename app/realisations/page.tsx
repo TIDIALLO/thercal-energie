@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Home, Building2, Layers, Warehouse } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Nos Réalisations | Thercal Énergie",
+  title: "Nos Réalisations | THERCAL ENERGIES",
   description: "Découvrez nos projets d'isolation thermique réalisés avec succès. Plus de 2000 clients satisfaits.",
 };
 

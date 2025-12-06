@@ -76,7 +76,7 @@ import Image from "next/image";
 ```typescript
 <Image
   src="/logo.svg"
-  alt="Thercal Énergie"
+  alt="THERCAL ENERGIES"
   width={120}
   height={40}
   className="h-10 w-auto object-contain"
@@ -97,7 +97,7 @@ import Image from "next/image";
 ```typescript
 <Image
   src="/logo.svg"
-  alt="Thercal Énergie"
+  alt="THERCAL ENERGIES"
   width={40}
   height={40}
   className="h-10 w-auto object-contain"
@@ -117,7 +117,7 @@ import Image from "next/image";
 ```typescript
 <Image
   src="/logo.svg"
-  alt="Thercal Énergie"
+  alt="THERCAL ENERGIES"
   width={40}
   height={40}
   className="h-10 w-auto object-contain"
@@ -135,7 +135,7 @@ npm run dev
 Ouvre http://localhost:3000
 
 **Vérifie :**
-- [ ] Le logo Thercal Energies apparaît en haut (header)
+- [ ] Le logo THERCAL ENERGIES apparaît en haut (header)
 - [ ] Le logo apparaît en bas (footer)
 - [ ] Le favicon (icône) apparaît dans l'onglet du navigateur
 - [ ] Les couleurs du site sont bleu ciel / bleu foncé
@@ -146,12 +146,12 @@ Ouvre http://localhost:3000
 
 ### Avant (avec placeholder)
 ```
-Header : [🔥 Carré bleu]  Thercal Énergie
+Header : [🔥 Carré bleu]  THERCAL ENERGIES
 ```
 
 ### Maintenant (avec ton logo)
 ```
-Header : [LOGO COMPLET AVEC FLAMME]  Thercal Énergie
+Header : [LOGO COMPLET AVEC FLAMME]  THERCAL ENERGIES
 ```
 
 ### Couleurs
@@ -227,7 +227,7 @@ Si tu es bloqué ou veux plus de détails :
 
 ## 🚀 C'est Prêt !
 
-Une fois ces 4 étapes terminées, ton site Thercal Énergie sera complet avec :
+Une fois ces 4 étapes terminées, ton site THERCAL ENERGIES sera complet avec :
 - ✨ Ton logo officiel
 - 🎨 Charte graphique bleu ciel/blanc
 - 📎 Upload de fichiers dans le formulaire

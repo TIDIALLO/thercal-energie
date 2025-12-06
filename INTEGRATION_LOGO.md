@@ -1,4 +1,4 @@
-# 🎨 Guide d'Intégration du Logo Thercal Energies
+# 🎨 Guide d'Intégration du Logo THERCAL ENERGIES
 
 ## 📋 Instructions Étape par Étape
 
@@ -60,7 +60,7 @@ Par :
 ```typescript
 <Image
   src="/logo.svg"
-  alt="Thercal Énergie"
+  alt="THERCAL ENERGIES"
   width={120}
   height={40}
   className="h-10 w-auto object-contain"
@@ -81,7 +81,7 @@ Même chose dans `components/layout/footer.tsx` :
 ```typescript
 <Image
   src="/logo.svg"
-  alt="Thercal Énergie"
+  alt="THERCAL ENERGIES"
   width={40}
   height={40}
   className="h-10 w-auto object-contain"
@@ -95,7 +95,7 @@ Et dans `components/layout/mobile-nav.tsx` :
 ```typescript
 <Image
   src="/logo.svg"
-  alt="Thercal Énergie"
+  alt="THERCAL ENERGIES"
   width={40}
   height={40}
   className="h-10 w-auto object-contain"
@@ -201,7 +201,7 @@ Si tu as besoin de créer les favicons depuis le logo :
 
 Une fois le logo intégré :
 
-- **Header** : Logo Thercal Energies avec la flamme bleue
+- **Header** : Logo THERCAL ENERGIES avec la flamme bleue
 - **Footer** : Même logo, version compacte
 - **Onglet navigateur** : Icône "T + flamme"
 - **Couleurs du site** : Bleu ciel et bleu foncé (selon la charte)

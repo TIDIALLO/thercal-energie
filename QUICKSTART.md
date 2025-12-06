@@ -1,4 +1,4 @@
-# 🚀 Démarrage Rapide - Thercal Énergie
+# 🚀 Démarrage Rapide - THERCAL ENERGIES
 
 Guide en 5 minutes pour démarrer le projet.
 
@@ -50,7 +50,7 @@ thercal-energie/
 
 ```typescript
 export const SITE_CONFIG = {
-  name: "Thercal Énergie",          // ← Nom de l'entreprise
+  name: "THERCAL ENERGIES",          // ← Nom de l'entreprise
   phone: "+33 1 23 45 67 89",       // ← Téléphone
   email: "contact@thercal-energie.fr", // ← Email
   address: "123 Rue..., 75001 Paris",  // ← Adresse

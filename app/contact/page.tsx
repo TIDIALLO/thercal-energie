@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ContactSection } from "@/components/sections/contact-section";
 
 export const metadata: Metadata = {
-  title: "Contact | Thercal Énergie",
+  title: "Contact | THERCAL ENERGIES",
   description: "Contactez-nous pour votre projet d'isolation thermique. Devis gratuit sous 24h.",
 };
 

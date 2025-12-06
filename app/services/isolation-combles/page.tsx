@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 export const metadata: Metadata = {
-  title: "Isolation des Combles - Perdus & Aménagés | Thercal Énergie",
+  title: "Isolation des Combles - Perdus & Aménagés | THERCAL ENERGIES",
   description: "Expert en isolation des combles perdus et aménagés. Réduisez jusqu'à 30% vos déperditions thermiques. Devis gratuit.",
 };
 

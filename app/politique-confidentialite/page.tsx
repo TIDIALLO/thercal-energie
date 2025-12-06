@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Politique de Confidentialité | Thercal Énergie",
-  description: "Politique de confidentialité et protection des données personnelles de Thercal Énergie.",
+  title: "Politique de Confidentialité | THERCAL ENERGIES",
+  description: "Politique de confidentialité et protection des données personnelles de THERCAL ENERGIES.",
   robots: "noindex, nofollow",
 };
 
@@ -24,7 +24,7 @@ export default function PolitiqueConfidentialitePage() {
               </p>
               <div className="space-y-2">
                 <p>
-                  <strong>Thercal Énergie SARL</strong>
+                  <strong>THERCAL ENERGIES SARL</strong>
                 </p>
                 <p>123 Rue de l'Isolation, 75001 Paris, France</p>
                 <p>Email : contact@thercal-energie.fr</p>
@@ -94,7 +94,7 @@ export default function PolitiqueConfidentialitePage() {
             <Section title="5. Destinataires des données">
               <p>
                 Vos données personnelles sont destinées aux services internes de
-                Thercal Énergie. Elles peuvent également être transmises à :
+                THERCAL ENERGIES. Elles peuvent également être transmises à :
               </p>
               <ul className="list-disc space-y-2 pl-6">
                 <li>
@@ -241,7 +241,7 @@ export default function PolitiqueConfidentialitePage() {
                   <strong>Par téléphone :</strong> +33 1 23 45 67 89
                 </p>
                 <p>
-                  <strong>Par courrier :</strong> Thercal Énergie SARL, 123 Rue
+                  <strong>Par courrier :</strong> THERCAL ENERGIES SARL, 123 Rue
                   de l'Isolation, 75001 Paris, France
                 </p>
               </div>
@@ -257,7 +257,7 @@ function IntroSection() {
   return (
     <div className="rounded-lg bg-blue-50 p-6">
       <p className="text-gray-700">
-        Chez <strong>Thercal Énergie</strong>, nous attachons une grande
+        Chez <strong>THERCAL ENERGIES</strong>, nous attachons une grande
         importance à la protection de vos données personnelles. Cette politique
         de confidentialité vous informe de la manière dont nous collectons,
         utilisons et protégeons vos informations conformément au Règlement

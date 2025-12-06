@@ -41,7 +41,7 @@ export function MobileNav() {
                 <div className="relative h-7 w-auto">
                   <Image
                     src="/thercal_energies_logo.png"
-                    alt="Thercal Énergies"
+                    alt="THERCAL ENERGIES"
                     width={90}
                     height={28}
                     className="object-contain"
@@ -73,6 +73,12 @@ export function MobileNav() {
                   <AccordionContent>
                     <ul className="space-y-2 pl-4">
                       <SubNavItem
+                        href="/services"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        Isolation tuyauteries / bâtiment
+                      </SubNavItem>
+                      <SubNavItem
                         href="/services/isolation-combles"
                         onClick={() => setIsOpen(false)}
                       >
@@ -100,10 +106,6 @@ export function MobileNav() {
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
-
-              <NavItem href="/realisations" onClick={() => setIsOpen(false)}>
-                Réalisations
-              </NavItem>
 
               <NavItem href="/blog" onClick={() => setIsOpen(false)}>
                 Blog

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 export const metadata: Metadata = {
-  title: "Isolation des Murs - Intérieure & Extérieure | Thercal Énergie",
+  title: "Isolation des Murs - Intérieure & Extérieure | THERCAL ENERGIES",
   description: "Expert en isolation des murs par l'intérieur (ITI) et l'extérieur (ITE). Améliorez votre confort thermique et valorisez votre bien. Devis gratuit.",
 };
 

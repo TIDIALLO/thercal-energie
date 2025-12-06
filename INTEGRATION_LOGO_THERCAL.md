@@ -1,8 +1,8 @@
-# 🎨 Intégration du Logo Thercal Énergies
+# 🎨 Intégration du Logo THERCAL ENERGIES
 
 ## 📋 Résumé
 
-Le logo officiel **Thercal Énergies** a été intégré dans toute l'application, remplaçant l'ancien logo générique.
+Le logo officiel **THERCAL ENERGIES** a été intégré dans toute l'application, remplaçant l'ancien logo générique.
 
 ---
 
@@ -35,12 +35,12 @@ Un fichier SVG a également été créé (`public/thercal-logo.svg`) pour des ut
 ```tsx
 <Image
   src="/logo.svg"
-  alt="Thercal Énergies"
+  alt="THERCAL ENERGIES"
   width={48}
   height={48}
 />
 <div>
-  <span>Thercal Énergies</span>
+  <span>THERCAL ENERGIES</span>
   <span>Calorifugeage & Isolation</span>
 </div>
 ```
@@ -49,7 +49,7 @@ Un fichier SVG a également été créé (`public/thercal-logo.svg`) pour des ut
 ```tsx
 <Image
   src="/thercal_energies.png"
-  alt="Thercal Énergies - Expert en calorifugeage et isolation thermique"
+  alt="THERCAL ENERGIES - Expert en calorifugeage et isolation thermique"
   width={180}
   height={48}
   className="object-contain smooth-transition group-hover:brightness-110"
@@ -77,7 +77,7 @@ Un fichier SVG a également été créé (`public/thercal-logo.svg`) pour des ut
   height={48}
 />
 <div>
-  <span>Thercal Énergies</span>
+  <span>THERCAL ENERGIES</span>
   <span>Calorifugeage & Isolation</span>
 </div>
 ```
@@ -86,7 +86,7 @@ Un fichier SVG a également été créé (`public/thercal-logo.svg`) pour des ut
 ```tsx
 <Image
   src="/thercal_energies.png"
-  alt="Thercal Énergies"
+  alt="THERCAL ENERGIES"
   width={180}
   height={48}
   className="object-contain smooth-transition group-hover:brightness-110"
@@ -111,7 +111,7 @@ Un fichier SVG a également été créé (`public/thercal-logo.svg`) pour des ut
   height={40}
 />
 <div>
-  <span>Thercal Énergies</span>
+  <span>THERCAL ENERGIES</span>
   <span>Calorifugeage & Isolation</span>
 </div>
 ```
@@ -120,7 +120,7 @@ Un fichier SVG a également été créé (`public/thercal-logo.svg`) pour des ut
 ```tsx
 <Image
   src="/thercal_energies.png"
-  alt="Thercal Énergies"
+  alt="THERCAL ENERGIES"
   width={150}
   height={40}
   className="object-contain"
@@ -224,12 +224,12 @@ className="flex items-center group smooth-transition hover:scale-105"
 
 #### **Header** :
 ```tsx
-alt="Thercal Énergies - Expert en calorifugeage et isolation thermique"
+alt="THERCAL ENERGIES - Expert en calorifugeage et isolation thermique"
 ```
 
 #### **Footer & Mobile** :
 ```tsx
-alt="Thercal Énergies"
+alt="THERCAL ENERGIES"
 ```
 
 ### **Impact SEO** :
@@ -304,7 +304,7 @@ components/layout/
 // 2 éléments : Image + Texte
 <Image src="/logo.svg" width={48} height={48} />
 <div>
-  <span>Thercal Énergies</span>
+  <span>THERCAL ENERGIES</span>
   <span>Calorifugeage & Isolation</span>
 </div>
 ```
@@ -363,7 +363,7 @@ components/layout/
 4. **Manifest** : Ajouter au manifest PWA
    ```json
    {
-     "name": "Thercal Énergies",
+     "name": "THERCAL ENERGIES",
      "icons": [{ "src": "/thercal_energies.png" }]
    }
    ```
@@ -373,7 +373,7 @@ components/layout/
 ## 📝 **Résumé Exécutif**
 
 ### **Ce qui a été fait** :
-✅ Intégration du logo officiel Thercal Énergies  
+✅ Intégration du logo officiel THERCAL ENERGIES  
 ✅ Remplacement dans Header, Footer et Mobile Nav  
 ✅ Optimisation des dimensions et effets  
 ✅ Mise à jour des coordonnées téléphoniques  

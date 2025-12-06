@@ -1,4 +1,4 @@
-# 🎯 ÉTAT ACTUEL DU PROJET - Thercal Énergie
+# 🎯 ÉTAT ACTUEL DU PROJET - THERCAL ENERGIES
 
 ## ✅ CE QUI FONCTIONNE (100%)
 

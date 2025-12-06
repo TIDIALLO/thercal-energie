@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Mentions Légales | Thercal Énergie",
-  description: "Mentions légales de Thercal Énergie, expert en isolation thermique.",
+  title: "Mentions Légales | THERCAL ENERGIES",
+  description: "Mentions légales de THERCAL ENERGIES, expert en isolation thermique.",
   robots: "noindex, nofollow",
 };
 
@@ -30,7 +30,7 @@ export default function MentionsLegalesPage() {
             <Section title="2. Éditeur du site">
               <div className="space-y-2">
                 <p>
-                  <strong>Raison sociale :</strong> Thercal Énergie SARL
+                  <strong>Raison sociale :</strong> THERCAL ENERGIES SARL
                 </p>
                 <p>
                   <strong>Capital social :</strong> 50 000 €

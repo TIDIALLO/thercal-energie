@@ -1,19 +1,24 @@
 import Link from "next/link";
-import { Home, Layers, Building2, Warehouse, ArrowRight } from "lucide-react";
+import { Home, Layers, Building2, Warehouse, ArrowRight, Factory } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-export function ServicesSection() {
+interface ServicesSectionProps {
+  readonly showHeader?: boolean;
+}
+
+export function ServicesSection({ showHeader = true }: ServicesSectionProps) {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-cyan-50 to-white py-8 sm:py-10">
       {/* Motif de fond décoratif animé */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-1/4 top-10 h-64 w-64 rounded-full bg-cyan-400 opacity-20 blur-3xl animate-pulse" />
         <div className="absolute right-1/4 bottom-10 h-80 w-80 rounded-full bg-blue-400 opacity-15 blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }} />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(14,165,233,0.08),_transparent_60%)]" />
       </div>
       
       <div className="container relative mx-auto px-4">
-        <SectionHeader />
+        {showHeader && <SectionHeader />}
         <ServiceGrid />
         
         {/* Mini CTA discret */}
@@ -84,6 +89,12 @@ function ServiceCard({ icon: Icon, title, description, href, index }: ServiceCar
 }
 
 const SERVICES = [
+  {
+    icon: Factory,
+    title: "Isolation tuyauteries / Isolation bâtiment",
+    description: "Solutions globales pour les réseaux industriels et l'enveloppe thermique du bâtiment.",
+    href: "/services",
+  },
   {
     icon: Home,
     title: "Isolation des combles",

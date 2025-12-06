@@ -1,6 +1,6 @@
-# Thercal Énergie - Site Web Professionnel
+# THERCAL ENERGIES - Site Web Professionnel
 
-Site web moderne et optimisé pour Thercal Énergie, expert en isolation thermique.
+Site web moderne et optimisé pour THERCAL ENERGIES, expert en isolation thermique.
 
 ## 🚀 Technologies Utilisées
 
@@ -317,7 +317,7 @@ npm run build
 
 ```typescript
 export const SITE_CONFIG = {
-  name: "Thercal Énergie",
+  name: "THERCAL ENERGIES",
   phone: "+33 1 23 45 67 89",
   email: "contact@thercal-energie.fr",
   // ...
@@ -367,4 +367,4 @@ Pour toute question technique :
 
 ## 📄 Licence
 
-Tous droits réservés © 2025 Thercal Énergie
+Tous droits réservés © 2025 THERCAL ENERGIES

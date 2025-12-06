@@ -1,4 +1,4 @@
-# ✅ RÉSUMÉ FINAL - Projet Thercal Énergie
+# ✅ RÉSUMÉ FINAL - Projet THERCAL ENERGIES
 
 ## 🎉 CE QUI A ÉTÉ CRÉÉ
 
@@ -409,7 +409,7 @@ Voir `README.md` pour configuration serveur (PM2 + Nginx)
 Un site web professionnel avec :
 
 ✅ Design moderne et responsive  
-✅ Charte graphique Thercal Energies  
+✅ Charte graphique THERCAL ENERGIES  
 ✅ Images d'installations réelles  
 ✅ Formulaires fonctionnels avec upload  
 ✅ SEO optimisé  

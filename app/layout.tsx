@@ -13,25 +13,19 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Thercal Énergies - Expert en Calorifugeage et Isolation Thermique",
+  title: "THERCAL ENERGIES - Expert en Calorifugeage et Isolation Thermique",
   description: "Spécialiste du calorifugeage industriel et de l'isolation thermique pour améliorer votre confort et réduire vos factures d'énergie jusqu'à 30%. Devis gratuit 24h.",
   keywords: ["calorifugeage", "isolation thermique", "isolation combles", "isolation murs", "économie énergie", "rénovation énergétique", "calorifugeage industriel", "efficacité énergétique"],
-  authors: [{ name: "Thercal Énergies" }],
+  authors: [{ name: "THERCAL ENERGIES" }],
   openGraph: {
-    title: "Thercal Énergies - Expert en Calorifugeage et Isolation Thermique",
+    title: "THERCAL ENERGIES - Expert en Calorifugeage et Isolation Thermique",
     description: "Spécialiste du calorifugeage industriel et de l'isolation thermique. Maximisez l'efficacité énergétique de vos installations.",
     type: "website",
     locale: "fr_FR",
   },
   icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-    ],
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
+    icon: [{ url: "/onglet-tercal.png", type: "image/png" }],
+    apple: [{ url: "/onglet-tercal.png", sizes: "180x180", type: "image/png" }],
   },
 };
 
@@ -42,7 +36,7 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="fr" className={inter.variable}>
-      <body className="min-h-screen bg-white font-sans antialiased">
+      <body className="min-h-screen bg-[radial-gradient(circle_at_top,_#f9fbff,_#eef5ff,_#ffffff)] font-sans antialiased">
         <AuthProvider>
           <Header />
           <main className="flex-1">{children}</main>

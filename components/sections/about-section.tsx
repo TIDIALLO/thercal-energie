@@ -5,11 +5,12 @@ import { Button } from "@/components/ui/button";
 
 export function AboutSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-blue-50/40 py-8 sm:py-10">
+    <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top,_#eef6ff,_#dff6ff_50%,_#f6fbff)] py-8 sm:py-12">
       {/* Motif de fond décoratif animé */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -left-20 top-20 h-72 w-72 rounded-full bg-gradient-to-br from-blue-300 to-cyan-200 opacity-15 blur-3xl animate-pulse" />
-        <div className="absolute -right-20 bottom-20 h-96 w-96 rounded-full bg-gradient-to-br from-cyan-300 to-blue-200 opacity-15 blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute -left-32 top-10 h-80 w-80 rounded-full bg-gradient-to-br from-blue-200 to-cyan-200 opacity-30 blur-3xl" />
+        <div className="absolute -right-32 bottom-10 h-96 w-96 rounded-full bg-gradient-to-br from-cyan-200 to-blue-100 opacity-30 blur-3xl" />
+        <div className="absolute inset-0 bg-white/60 backdrop-blur-[2px]" />
       </div>
       
       <div className="container relative mx-auto px-4">
@@ -45,15 +46,15 @@ export function AboutSection() {
 
 function AboutContent() {
   return (
-    <div className="space-y-4 animate-fade-in-up">
-      <h2>
-        Pourquoi choisir Thercal Énergies ?
+    <div className="space-y-4 animate-fade-in-up text-center">
+      <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+        Pourquoi choisir <span className="text-blue-600">THERCAL ENERGIES</span> ?
       </h2>
-      <p className="text-lead">
-        Experts en <span className="text-highlight">calorifugeage</span> et <span className="text-highlight">isolation thermique</span>. Notre mission : votre confort + vos économies d'énergie.
+      <p className="text-lead font-semibold text-gray-800">
+        Nous concevons des solutions d'isolation simples à comprendre : diagnostic rapide, matériaux premium, équipe engagée.
       </p>
-      <p>
-        Matériaux certifiés RGE. Équipe qualifiée. Diagnostic personnalisé pour chaque projet.
+      <p className="font-semibold text-gray-800">
+        Chaque chantier suit une feuille de route claire pour livrer un confort durable sans discours trop technique.
       </p>
     </div>
   );
@@ -77,20 +78,26 @@ interface FeatureCardProps {
 }
 
 function FeatureCard({ icon: Icon, title, description, index }: FeatureCardProps) {
-  const hoverColors = [
-    "hover:bg-gradient-to-br hover:from-blue-600 hover:to-cyan-600",
-    "hover:bg-gradient-to-br hover:from-cyan-600 hover:to-blue-600",
-    "hover:bg-gradient-to-br hover:from-blue-700 hover:to-blue-500",
-    "hover:bg-gradient-to-br hover:from-cyan-700 hover:to-cyan-500"
+  const colorSets = [
+    { border: "border-blue-200", gradient: "from-blue-600 to-cyan-500", hoverBg: "hover:bg-blue-50" },
+    { border: "border-cyan-200", gradient: "from-cyan-500 to-emerald-400", hoverBg: "hover:bg-cyan-50" },
+    { border: "border-indigo-200", gradient: "from-indigo-500 to-blue-400", hoverBg: "hover:bg-indigo-50" },
+    { border: "border-purple-200", gradient: "from-purple-500 to-pink-400", hoverBg: "hover:bg-pink-50" },
   ];
-  
+
+  const colors = colorSets[index % colorSets.length];
+
   return (
-    <div className={`group rounded-xl bg-white p-4 shadow-sm smooth-transition hover:shadow-2xl hover:-translate-y-2 border border-blue-100/50 ${hoverColors[index]}`}>
-      <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-cyan-600 text-white shadow-md smooth-transition group-hover:scale-125 group-hover:rotate-12 group-hover:shadow-xl group-hover:from-white group-hover:to-white group-hover:text-blue-600">
+    <div
+      className={`group rounded-2xl bg-white p-5 shadow-sm smooth-transition hover:shadow-2xl hover:-translate-y-2 border ${colors.border} ${colors.hoverBg}`}
+    >
+      <div
+        className={`mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${colors.gradient} text-white shadow-md smooth-transition group-hover:scale-125 group-hover:rotate-6 group-hover:shadow-xl`}
+      >
         <Icon className="h-5 w-5 smooth-transition" />
       </div>
-      <h3 className="mb-1.5 text-base font-bold text-gray-900 smooth-transition group-hover:text-white">{title}</h3>
-      <p className="text-xs text-gray-600 leading-relaxed smooth-transition group-hover:text-white/90">{description}</p>
+      <h3 className="mb-1.5 text-base font-bold text-gray-900 smooth-transition group-hover:text-blue-700">{title}</h3>
+      <p className="text-xs text-gray-600 leading-relaxed">{description}</p>
     </div>
   );
 }
@@ -99,22 +106,22 @@ const FEATURES = [
   {
     icon: Award,
     title: "Expertise reconnue",
-    description: "Plus de 15 ans d'expérience et des certifications professionnelles",
+    description: "Plusieurs années d'expérience et un pilotage rigoureux.",
   },
   {
     icon: Users,
     title: "Équipe qualifiée",
-    description: "Des artisans RGE formés aux dernières techniques d'isolation",
+    description: "Artisans spécialisés et interlocuteur unique par projet.",
   },
   {
     icon: Shield,
     title: "Garantie décennale",
-    description: "Tous nos travaux sont couverts par une garantie décennale",
+    description: "Travaux sécurisés et suivis après livraison.",
   },
   {
     icon: Leaf,
     title: "Matériaux écologiques",
-    description: "Nous privilégions des solutions respectueuses de l'environnement",
+    description: "Solutions performantes et responsables.",
   },
 ] as const;
 

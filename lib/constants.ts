@@ -4,7 +4,7 @@
  */
 
 export const SITE_CONFIG = {
-  name: process.env.NEXT_PUBLIC_SITE_NAME || "Thercal Énergie",
+  name: process.env.NEXT_PUBLIC_SITE_NAME || "THERCAL ENERGIES",
   description: "Expert en isolation thermique depuis plus de 15 ans",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://thercal-energie.fr",
   phone: process.env.NEXT_PUBLIC_PHONE || "+33 1 23 45 67 89",
@@ -59,7 +59,7 @@ export const SERVICES_LIST = [
 ] as const;
 
 export const COMPANY_INFO = {
-  legalName: "Thercal Énergie SARL",
+  legalName: "THERCAL ENERGIES SARL",
   capital: "50 000 €",
   siret: "123 456 789 00012",
   rcs: "Paris B 123 456 789",

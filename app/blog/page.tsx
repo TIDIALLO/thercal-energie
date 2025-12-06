@@ -4,9 +4,10 @@ import { Calendar, Clock, ArrowRight, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { BLOG_POSTS } from "@/lib/blog-posts";
 
 export const metadata = {
-  title: "Blog - Thercal Énergie | Conseils en Calorifugeage et Isolation",
+  title: "Blog - THERCAL ENERGIES | Conseils en Calorifugeage et Isolation",
   description: "Découvrez nos articles sur le calorifugeage, l'isolation thermique et les économies d'énergie. Conseils d'experts et actualités du secteur.",
 };
 
@@ -130,61 +131,4 @@ function BlogCard({ title, excerpt, slug, date, readTime, category, image, index
     </Card>
   );
 }
-
-const BLOG_POSTS = [
-  {
-    title: "Qu'est-ce que le calorifugeage et pourquoi est-il essentiel ?",
-    excerpt: "Découvrez l'importance du calorifugeage pour réduire les déperditions thermiques et améliorer l'efficacité énergétique de vos installations.",
-    slug: "importance-calorifugeage",
-    date: "15 Nov 2024",
-    readTime: "5 min",
-    category: "Calorifugeage",
-    image: "/images/thercal1.jpg",
-  },
-  {
-    title: "Les différents types d'isolation thermique pour votre habitation",
-    excerpt: "Combles, murs, sols, toiture : comment choisir la meilleure solution d'isolation thermique adaptée à vos besoins spécifiques.",
-    slug: "types-isolation-thermique",
-    date: "10 Nov 2024",
-    readTime: "7 min",
-    category: "Isolation",
-    image: "/images/thercal2.jpg",
-  },
-  {
-    title: "Comment économiser jusqu'à 30% sur vos factures d'énergie",
-    excerpt: "Les meilleures pratiques et solutions d'isolation pour réduire significativement vos dépenses énergétiques tout en améliorant votre confort.",
-    slug: "economies-energie-isolation",
-    date: "5 Nov 2024",
-    readTime: "6 min",
-    category: "Économies",
-    image: "/images/thercal3.jpg",
-  },
-  {
-    title: "Calorifugeage industriel : normes et réglementations 2024",
-    excerpt: "Tour d'horizon des nouvelles normes en vigueur pour le calorifugeage dans le secteur industriel et les bâtiments tertiaires.",
-    slug: "normes-calorifugeage-2024",
-    date: "1 Nov 2024",
-    readTime: "8 min",
-    category: "Réglementation",
-    image: "/images/thercal4.jpg",
-  },
-  {
-    title: "Les matériaux d'isolation écologiques et performants",
-    excerpt: "Laine de roche, ouate de cellulose, chanvre : comparatif des matériaux écologiques pour une isolation thermique responsable.",
-    slug: "materiaux-isolation-ecologiques",
-    date: "28 Oct 2024",
-    readTime: "6 min",
-    category: "Isolation",
-    image: "/images/thercal5.jpg",
-  },
-  {
-    title: "Diagnostic thermique : pourquoi est-il indispensable ?",
-    excerpt: "Avant d'entreprendre des travaux d'isolation, le diagnostic thermique permet d'identifier précisément les points faibles de votre bâtiment.",
-    slug: "diagnostic-thermique-indispensable",
-    date: "22 Oct 2024",
-    readTime: "5 min",
-    category: "Calorifugeage",
-    image: "/images/thercal6.jpg",
-  },
-] as const;
 

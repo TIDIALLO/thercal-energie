@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 export const metadata: Metadata = {
-  title: "Isolation des Sols & Planchers | Thercal Énergie",
+  title: "Isolation des Sols & Planchers | THERCAL ENERGIES",
   description: "Expert en isolation des sols et planchers. Supprimez les sensations de froid et améliorez votre confort thermique. Devis gratuit.",
 };
 

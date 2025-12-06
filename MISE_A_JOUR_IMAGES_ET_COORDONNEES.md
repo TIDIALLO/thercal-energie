@@ -1,8 +1,8 @@
-# 🎨 Mise à Jour des Images et Coordonnées - Thercal Énergies
+# 🎨 Mise à Jour des Images et Coordonnées - THERCAL ENERGIES
 
 ## 📋 Résumé des Modifications
 
-Ce document détaille toutes les modifications apportées au site web de Thercal Énergies concernant le remplacement des images et la mise à jour des coordonnées de l'entreprise.
+Ce document détaille toutes les modifications apportées au site web de THERCAL ENERGIES concernant le remplacement des images et la mise à jour des coordonnées de l'entreprise.
 
 ---
 
@@ -196,7 +196,7 @@ alt="Installation d'isolation thermique professionnelle - Équipements modernes 
 alt="Expertise en calorifugeage et installations thermiques complexes - Système de tuyauterie industrielle"
 
 // Exemple Qui sommes-nous
-alt="Équipe Thercal Énergies - Experts en isolation thermique et calorifugeage"
+alt="Équipe THERCAL ENERGIES - Experts en isolation thermique et calorifugeage"
 ```
 
 ### **Formats Responsive**
@@ -325,6 +325,6 @@ Dimanche         : Fermé
 ---
 
 **Mise à jour effectuée le** : Novembre 2024  
-**Par** : Équipe Technique Thercal Énergies  
+**Par** : Équipe Technique THERCAL ENERGIES  
 **Status** : ✅ **COMPLET ET VALIDÉ**
 
