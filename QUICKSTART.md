@@ -51,8 +51,8 @@ thercal-energie/
 ```typescript
 export const SITE_CONFIG = {
   name: "THERCAL ENERGIES",          // ← Nom de l'entreprise
-  phone: "+33 1 23 45 67 89",       // ← Téléphone
-  email: "contact@thercal-energie.fr", // ← Email
+  phone: "+33 7 86 02 51 97",       // ← Téléphone
+  email: "contact@thercalenergies.com", // ← Email
   address: "123 Rue..., 75001 Paris",  // ← Adresse
   // ...
 };

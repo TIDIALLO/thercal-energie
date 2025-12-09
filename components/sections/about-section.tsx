@@ -54,7 +54,7 @@ function AboutContent() {
         Nous concevons des solutions d'isolation simples à comprendre : diagnostic rapide, matériaux premium, équipe engagée.
       </p>
       <p className="font-semibold text-gray-800">
-        Chaque chantier suit une feuille de route claire pour livrer un confort durable sans discours trop technique.
+        Chaque chantier suit une feuille de route claire pour livrer un confort durable.
       </p>
     </div>
   );

@@ -43,7 +43,7 @@ Les nouvelles images `thercal` ont été intégrées dans tout le site :
 ### **Anciennes Coordonnées** ❌
 ```
 Téléphone : +33 1 23 45 67 89
-Email     : contact@thercal-energie.fr
+Email     : contact@thercalenergies.com
 Adresse   : 123 Rue de l'Isolation, 75001 Paris
 ```
 
@@ -51,8 +51,8 @@ Adresse   : 123 Rue de l'Isolation, 75001 Paris
 ```
 Entreprise : THERCAL Energies SAS
 Contact    : Radouane Salaly
-Téléphone  : +33 1 34 77 85 20
-Email      : contact@thercal-energie.fr
+Téléphone  : +33 7 86 02 51 97
+Email      : contact@thercalenergies.com
 Adresse    : 2 rue Pierre de RONSARD
              78200 MANTES LA JOLIE
 ```
@@ -65,14 +65,14 @@ const CONTACT_ITEMS = [
   {
     icon: Phone,
     label: "Téléphone",
-    value: "+33 1 34 77 85 20",        // ✅ Mis à jour
-    href: "tel:+33134778520",          // ✅ Mis à jour
+    value: "+33 7 86 02 51 97",        // ✅ Mis à jour
+    href: "tel:+33786025197",          // ✅ Mis à jour
   },
   {
     icon: Mail,
     label: "Email",
-    value: "contact@thercal-energie.fr",
-    href: "mailto:contact@thercal-energie.fr",
+    value: "contact@thercalenergies.com",
+    href: "mailto:contact@thercalenergies.com",
   },
   {
     icon: MapPin,
@@ -86,13 +86,13 @@ const CONTACT_ITEMS = [
 ```typescript
 <ContactItem
   icon={Phone}
-  href="tel:+33134778520"              // ✅ Mis à jour
-  text="+33 1 34 77 85 20"             // ✅ Mis à jour
+  href="tel:+33786025197"              // ✅ Mis à jour
+  text="+33 7 86 02 51 97"             // ✅ Mis à jour
 />
 <ContactItem
   icon={Mail}
-  href="mailto:contact@thercal-energie.fr"
-  text="contact@thercal-energie.fr"
+  href="mailto:contact@thercalenergies.com"
+  text="contact@thercalenergies.com"
 />
 <ContactItem
   icon={MapPin}
@@ -272,8 +272,8 @@ vercel --prod
 ### **THERCAL Energies SAS**
 ```
 👤 Contact principal : Radouane Salaly
-📞 Téléphone         : +33 1 34 77 85 20
-📧 Email             : contact@thercal-energie.fr
+📞 Téléphone         : +33 7 86 02 51 97
+📧 Email             : contact@thercalenergies.com
 📍 Adresse           : 2 rue Pierre de RONSARD
                        78200 MANTES LA JOLIE
 ```

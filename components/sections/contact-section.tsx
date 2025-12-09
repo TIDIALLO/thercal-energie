@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Phone, Mail, MapPin, Send, Upload, X } from "lucide-react";
+import { Phone, Mail, MapPin, Send, Upload, X, Factory } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -289,11 +289,11 @@ function ContactInfo() {
         <div className="relative">
           <h3 className="mb-2 text-lg font-bold text-white flex items-center gap-2">
             <span className="text-2xl">⚡</span>
-            Intervention rapide
+            Nous intervenons dans toute la France
           </h3>
           <p className="text-sm text-blue-50 leading-relaxed">
-            Nous intervenons dans toute la région <span className="font-bold text-white">Île-de-France</span>. 
-            Devis gratuit sous <span className="font-bold text-white">24h</span>.
+            Équipes mobiles, entrepôts régionaux et hotline dédiée pour planifier une visite partout en France métropolitaine.
+            Devis détaillé sous <span className="font-bold text-white">24h</span>.
           </p>
         </div>
       </div>
@@ -342,16 +342,21 @@ function formatFileSize(bytes: number): string {
 
 const CONTACT_ITEMS = [
   {
+    icon: Factory,
+    label: "Service clé",
+    value: "Isolation de tuyauteries industrielle",
+  },
+  {
     icon: Phone,
     label: "Téléphone",
-    value: "+33 1 34 77 85 20",
-    href: "tel:+33134778520",
+    value: "+33 7 86 02 51 97",
+    href: "tel:+33786025197",
   },
   {
     icon: Mail,
     label: "Email",
-    value: "contact@thercal-energie.fr",
-    href: "mailto:contact@thercal-energie.fr",
+    value: "contact@thercalenergies.com",
+    href: "mailto:contact@thercalenergies.com",
   },
   {
     icon: MapPin,

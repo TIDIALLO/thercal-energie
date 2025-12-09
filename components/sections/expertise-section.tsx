@@ -63,7 +63,7 @@ function ExpertiseContent() {
           Une expertise calorifugeage claire et efficace
         </h2>
         <p className="text-lg text-gray-600 leading-relaxed animate-fade-in-up stagger-1">
-          Nous mixons audit thermique, préparation atelier et pose sur site pour livrer un rendu homogène, sans jargon inutile.
+          Nous mixons audit thermique, préparation atelier et pose sur site pour livrer un rendu homogène.
         </p>
       </div>
 

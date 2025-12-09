@@ -318,8 +318,8 @@ npm run build
 ```typescript
 export const SITE_CONFIG = {
   name: "THERCAL ENERGIES",
-  phone: "+33 1 23 45 67 89",
-  email: "contact@thercal-energie.fr",
+  phone: "+33 7 86 02 51 97",
+  email: "contact@thercalenergies.com",
   // ...
 };
 ```
@@ -362,8 +362,8 @@ Vérifiez que les images sont dans `public/` et référencées avec `/image.jpg`
 ## 📧 Support
 
 Pour toute question technique :
-- Email : contact@thercal-energie.fr
-- Téléphone : +33 1 23 45 67 89
+- Email : contact@thercalenergies.com
+- Téléphone : +33 7 86 02 51 97
 
 ## 📄 Licence
 

@@ -104,7 +104,7 @@ export const BLOG_POSTS: readonly BlogPost[] = [
     date: "1 Nov 2024",
     readTime: "8 min",
     category: "Réglementation",
-    image: "/images/thercal4.jpg",
+    image: "/images/thercal1.jpg",
     sections: [
       {
         heading: "Les évolutions 2024",
@@ -131,7 +131,7 @@ export const BLOG_POSTS: readonly BlogPost[] = [
     date: "28 Oct 2024",
     readTime: "6 min",
     category: "Isolation",
-    image: "/images/thercal5.jpg",
+    image: "/images/thercal2.jpg",
     sections: [
       {
         heading: "Pourquoi passer au biosourcé ?",
@@ -158,7 +158,7 @@ export const BLOG_POSTS: readonly BlogPost[] = [
     date: "22 Oct 2024",
     readTime: "5 min",
     category: "Calorifugeage",
-    image: "/images/thercal6.jpg",
+    image: "/images/thercal3.jpg",
     sections: [
       {
         heading: "Comprendre la consommation actuelle",

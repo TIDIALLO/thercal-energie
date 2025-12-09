@@ -4,7 +4,7 @@ import { CTASection } from "@/components/sections/cta-section";
 
 export const metadata: Metadata = {
   title: "Nos Services d'Isolation Thermique | THERCAL ENERGIES",
-  description: "Découvrez nos services d'isolation : combles, murs, sols et toiture. Expertise professionnelle et matériaux certifiés.",
+  description: "Découvrez nos solutions complètes d'isolation : tuyauteries industrielles, combles, murs, sols et toiture. Expertise professionnelle et matériaux certifiés.",
 };
 
 export default function ServicesPage() {
@@ -22,10 +22,10 @@ export default function ServicesPage() {
               Expertise isolations
             </p>
             <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-              Isolation tuyauteries / Isolation bâtiment
+              Isolation de tuyauteries industrielle & enveloppe thermique
             </h1>
             <p className="text-lg text-blue-100">
-              Des solutions complètes et personnalisées pour optimiser vos performances thermiques, du calorifugeage industriel à l’enveloppe du bâtiment.
+              Calorifugeage haute performance, préfabrication atelier et interventions sur site pour sécuriser vos réseaux et améliorer l'efficacité énergétique de vos bâtiments.
             </p>
           </div>
         </div>

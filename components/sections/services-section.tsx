@@ -50,9 +50,21 @@ function SectionHeader() {
 function ServiceGrid() {
   return (
     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
-      {SERVICES.map((service, index) => (
-        <ServiceCard key={service.title} {...service} index={index} />
-      ))}
+      {SERVICES.map((service, index) => {
+        const isLast = index === SERVICES.length - 1;
+        return (
+          <div
+            key={service.title}
+            className={`w-full ${
+              isLast
+                ? "sm:col-span-2 lg:col-span-2 lg:max-w-3xl lg:mx-auto xl:col-span-2 xl:col-start-2"
+                : ""
+            }`}
+          >
+            <ServiceCard {...service} index={index} isFeatured={isLast} />
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -63,18 +75,30 @@ interface ServiceCardProps {
   readonly description: string;
   readonly href: string;
   readonly index: number;
+  readonly isFeatured?: boolean;
 }
 
-function ServiceCard({ icon: Icon, title, description, href, index }: ServiceCardProps) {
+function ServiceCard({ icon: Icon, title, description, href, index, isFeatured }: ServiceCardProps) {
   return (
-    <Card className="group card-spaced overflow-hidden bg-white shadow-xl border-blue-100 smooth-transition hover:shadow-2xl hover:-translate-y-3 hover:bg-gradient-to-br hover:from-blue-600 hover:to-cyan-600 animate-fade-in-up"
+    <Card
+      className={`group card-spaced overflow-hidden bg-white shadow-xl border-blue-100 smooth-transition hover:shadow-2xl hover:-translate-y-3 hover:bg-gradient-to-br hover:from-blue-600 hover:to-cyan-600 animate-fade-in-up ${
+        isFeatured ? "border-2 border-blue-300" : ""
+      }`}
       style={{ animationDelay: `${index * 100}ms` }}>
       <CardHeader className="pb-3 flex flex-col items-center text-center">
-        <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-600 text-white shadow-lg smooth-transition group-hover:scale-110 group-hover:shadow-xl group-hover:rotate-6 group-hover:from-white group-hover:to-white group-hover:text-gray-900">
+        <div
+          className={`mb-5 flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-600 text-white shadow-lg smooth-transition group-hover:scale-110 group-hover:shadow-xl group-hover:rotate-6 group-hover:from-white group-hover:to-white group-hover:text-gray-900 ${
+            isFeatured ? "border-2 border-white/50" : ""
+          }`}
+        >
           <Icon className="h-10 w-10 smooth-transition group-hover:scale-110" />
         </div>
-        <CardTitle className="text-lg font-bold smooth-transition text-gray-900 group-hover:text-white mb-2">{title}</CardTitle>
-        <CardDescription className="text-sm leading-relaxed text-gray-600 smooth-transition group-hover:text-white/90">{description}</CardDescription>
+        <CardTitle className="text-lg font-bold smooth-transition text-gray-900 group-hover:text-white mb-2">
+          {title}
+        </CardTitle>
+        <CardDescription className="text-sm leading-relaxed text-gray-600 smooth-transition group-hover:text-white/90">
+          {description}
+        </CardDescription>
       </CardHeader>
       <CardContent className="pt-0 text-center">
         <Button variant="link" className="p-0 text-sm font-semibold text-blue-600 smooth-transition group-hover:translate-x-1 group-hover:text-white" asChild>
@@ -91,8 +115,8 @@ function ServiceCard({ icon: Icon, title, description, href, index }: ServiceCar
 const SERVICES = [
   {
     icon: Factory,
-    title: "Isolation tuyauteries / Isolation bâtiment",
-    description: "Solutions globales pour les réseaux industriels et l'enveloppe thermique du bâtiment.",
+    title: "Isolation de tuyauteries industrielle",
+    description: "Calorifugeage vapeur, eau glacée et process avec matériaux haute performance et finitions atelier.",
     href: "/services",
   },
   {

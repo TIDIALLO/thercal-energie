@@ -52,7 +52,7 @@ export default function MentionsLegalesPage() {
                   <strong>Téléphone :</strong> +33 1 23 45 67 89
                 </p>
                 <p>
-                  <strong>Email :</strong> contact@thercal-energie.fr
+                  <strong>Email :</strong> contact@thercalenergies.com
                 </p>
                 <p>
                   <strong>Directeur de publication :</strong> [Nom du directeur]
@@ -92,7 +92,7 @@ export default function MentionsLegalesPage() {
               <p>
                 Si vous constatez une lacune, erreur ou ce qui paraît être un
                 dysfonctionnement, merci de bien vouloir le signaler par email à
-                l'adresse contact@thercal-energie.fr, en décrivant le problème
+                l'adresse contact@thercalenergies.com, en décrivant le problème
                 de la manière la plus précise possible.
               </p>
             </Section>

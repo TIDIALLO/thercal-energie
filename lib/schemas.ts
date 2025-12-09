@@ -15,7 +15,7 @@ export const devisFormSchema = z.object({
   email: z.string().email("Email invalide"),
   phone: z.string().min(10, "Numéro de téléphone invalide"),
   address: z.string().min(5, "L'adresse doit contenir au moins 5 caractères"),
-  serviceType: z.enum(["combles", "murs", "sols", "toiture", "autre"]),
+  serviceType: z.enum(["tuyauteries", "combles", "murs", "sols", "toiture", "autre"]),
   surface: z.string().optional(),
   budget: z.string().optional(),
   message: z.string().min(10, "La description doit contenir au moins 10 caractères"),

@@ -68,8 +68,8 @@ function Navigation() {
               <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
                 <ServiceItem
                   href="/services"
-                  title="Isolation tuyauteries / Isolation bâtiment"
-                  description="Calorifugeage industriel et enveloppe thermique complète"
+                  title="Isolation de tuyauteries industrielle"
+                  description="Calorifugeage process, vapeur et eau glacée clé en main"
                 />
                 <ServiceItem
                   href="/services/isolation-combles"
@@ -133,7 +133,10 @@ function ContactButtons() {
         </a>
       </Button>
       <Button variant="ghost" size="icon" asChild className="hidden sm:flex">
-        <a href="mailto:contact@thercal-energie.fr" aria-label="Email">
+        <a
+          href="mailto:contact@thercalenergies.com?cc=pierre.dieng@thercalenergies.com,radouane.salaly@thercalenergies.com"
+          aria-label="Email"
+        >
           <Mail className="h-5 w-5" />
         </a>
       </Button>

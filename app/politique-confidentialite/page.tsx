@@ -27,7 +27,7 @@ export default function PolitiqueConfidentialitePage() {
                   <strong>THERCAL ENERGIES SARL</strong>
                 </p>
                 <p>123 Rue de l'Isolation, 75001 Paris, France</p>
-                <p>Email : contact@thercal-energie.fr</p>
+                <p>Email : contact@thercalenergies.com</p>
                 <p>Téléphone : +33 1 23 45 67 89</p>
               </div>
             </Section>
@@ -169,7 +169,7 @@ export default function PolitiqueConfidentialitePage() {
               </ul>
               <p>
                 Pour exercer ces droits, contactez-nous à :{" "}
-                <strong>contact@thercal-energie.fr</strong>
+                <strong>contact@thercalenergies.com</strong>
               </p>
               <p>
                 Vous avez également le droit d'introduire une réclamation auprès
@@ -235,7 +235,7 @@ export default function PolitiqueConfidentialitePage() {
               </p>
               <div className="space-y-2">
                 <p>
-                  <strong>Par email :</strong> contact@thercal-energie.fr
+                  <strong>Par email :</strong> contact@thercalenergies.com
                 </p>
                 <p>
                   <strong>Par téléphone :</strong> +33 1 23 45 67 89

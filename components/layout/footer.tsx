@@ -77,6 +77,9 @@ function Services() {
         Nos services
       </h3>
       <ul className="space-y-3">
+        <FooterLink href="/services">
+          Isolation de tuyauteries industrielle
+        </FooterLink>
         <FooterLink href="/services/isolation-combles">
           Isolation des combles
         </FooterLink>
@@ -104,13 +107,13 @@ function ContactInfo() {
       <ul className="space-y-4">
         <ContactItem
           icon={Phone}
-          href="tel:+33134778520"
-          text="+33 1 34 77 85 20"
+          href="tel:+33786025197"
+          text="+33 7 86 02 51 97"
         />
         <ContactItem
           icon={Mail}
-          href="mailto:contact@thercal-energie.fr"
-          text="contact@thercal-energie.fr"
+          href="mailto:contact@thercalenergies.com"
+          text="contact@thercalenergies.com"
         />
         <ContactItem
           icon={MapPin}

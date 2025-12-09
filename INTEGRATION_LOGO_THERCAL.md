@@ -62,7 +62,7 @@ Un fichier SVG a également été créé (`public/thercal-logo.svg`) pour des ut
 - ✅ Taille optimisée pour la navbar (180x48px)
 - ✅ Effet de luminosité au survol (`hover:brightness-110`)
 - ✅ Chargement prioritaire pour le SEO
-- ✅ Téléphone mis à jour : `+33 1 34 77 85 20`
+- ✅ Téléphone mis à jour : `+33 7 86 02 51 97`
 
 ---
 

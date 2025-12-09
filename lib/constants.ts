@@ -7,8 +7,8 @@ export const SITE_CONFIG = {
   name: process.env.NEXT_PUBLIC_SITE_NAME || "THERCAL ENERGIES",
   description: "Expert en isolation thermique depuis plus de 15 ans",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://thercal-energie.fr",
-  phone: process.env.NEXT_PUBLIC_PHONE || "+33 1 23 45 67 89",
-  email: process.env.NEXT_PUBLIC_EMAIL || "contact@thercal-energie.fr",
+  phone: process.env.NEXT_PUBLIC_PHONE || "+33 7 86 02 51 97",
+  email: process.env.NEXT_PUBLIC_EMAIL || "contact@thercalenergies.com",
   address: process.env.NEXT_PUBLIC_ADDRESS || "123 Rue de l'Isolation, 75001 Paris",
   social: {
     facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL || "https://facebook.com/thercal-energie",
@@ -25,6 +25,7 @@ export const NAVIGATION_ITEMS = [
 ] as const;
 
 export const SERVICE_TYPES = {
+  tuyauteries: "Isolation de tuyauteries industrielle",
   combles: "Isolation des combles",
   murs: "Isolation des murs",
   sols: "Isolation des sols",
@@ -32,6 +33,12 @@ export const SERVICE_TYPES = {
 } as const;
 
 export const SERVICES_LIST = [
+  {
+    slug: "isolation-tuyauteries",
+    title: "Isolation de tuyauteries industrielle",
+    shortDescription: "Réseaux vapeur, eau glacée, process",
+    icon: "factory",
+  },
   {
     slug: "isolation-combles",
     title: "Isolation des combles",

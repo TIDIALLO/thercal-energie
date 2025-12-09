@@ -62,16 +62,34 @@ export default function DevisPage() {
 
 function HeroSection() {
   return (
-    <section className="bg-gradient-to-br from-blue-50 to-white py-16">
-      <div className="container mx-auto px-4">
-        <div className="mx-auto max-w-3xl text-center">
-          <h1 className="mb-4 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+    <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-blue-900 to-slate-900 py-20 text-white">
+      <div className="absolute inset-0">
+        <div className="absolute left-1/4 top-6 h-72 w-72 rounded-full bg-cyan-500/30 blur-3xl" />
+        <div className="absolute right-1/5 bottom-0 h-80 w-80 rounded-full bg-blue-500/20 blur-[120px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.08),_transparent_55%)]" />
+      </div>
+      <div className="container relative mx-auto px-4">
+        <div className="mx-auto max-w-4xl text-center space-y-6">
+          <p className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-5 py-1 text-xs uppercase tracking-[0.35em] text-cyan-200">
+            Devis express 24h
+          </p>
+          <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
             Demande de devis gratuit
           </h1>
-          <p className="text-lg text-gray-600">
-            Remplissez le formulaire ci-dessous et recevez votre devis
-            personnalisé sous 24 heures
+          <p className="text-lg text-blue-100">
+            Isolation de tuyauteries industrielle, bâtiments tertiaires et logements : décrivez votre projet et recevez
+            une estimation détaillée sous 24 heures par nos équipes.
           </p>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-center">
+            <div className="rounded-2xl border border-white/20 bg-white/10 px-5 py-3 text-left">
+              <p className="text-sm uppercase tracking-[0.3em] text-blue-200">Service prioritaire</p>
+              <p className="text-lg font-semibold text-white">Isolation de tuyauteries industrielle</p>
+            </div>
+            <div className="rounded-2xl border border-white/20 bg-white/10 px-5 py-3 text-left">
+              <p className="text-sm uppercase tracking-[0.3em] text-blue-200">Couverture</p>
+              <p className="text-lg font-semibold text-white">France entière</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -88,17 +106,22 @@ interface FormSectionProps {
 
 function FormSection({ onSubmit, register, errors, isSubmitting, setValue }: FormSectionProps) {
   return (
-    <section className="py-16 sm:py-20">
-      <div className="container mx-auto px-4">
-        <div className="mx-auto max-w-2xl">
-          <Card>
-            <CardHeader>
-              <CardTitle>Votre projet d'isolation</CardTitle>
-              <CardDescription>
-                Décrivez-nous votre projet pour recevoir un devis adapté à vos besoins
+    <section className="relative py-16 sm:py-20 bg-[radial-gradient(circle_at_top,_#f7fbff,_#e3f3ff_55%,_#f7fbff)]">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -left-10 top-20 h-64 w-64 rounded-full bg-cyan-100 blur-3xl opacity-70" />
+        <div className="absolute right-0 bottom-0 h-72 w-72 rounded-full bg-blue-100 blur-[140px]" />
+      </div>
+      <div className="container relative mx-auto px-4">
+        <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] items-start">
+          <Card className="shadow-2xl border-blue-100 bg-white/95 backdrop-blur">
+            <CardHeader className="border-b border-blue-50">
+              <CardTitle className="text-2xl font-bold text-gray-900">Votre projet d'isolation</CardTitle>
+              <CardDescription className="text-gray-600">
+                Décrivez le chantier, ajoutez vos contraintes et recevez une proposition détaillée préparée par un
+                chargé d'affaires.
               </CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className="pt-6">
               <form onSubmit={onSubmit} className="space-y-6">
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
@@ -154,6 +177,7 @@ function FormSection({ onSubmit, register, errors, isSubmitting, setValue }: For
                       <SelectValue placeholder="Sélectionnez un service" />
                     </SelectTrigger>
                     <SelectContent>
+                      <SelectItem value="tuyauteries">Isolation de tuyauteries industrielle</SelectItem>
                       <SelectItem value="combles">Isolation des combles</SelectItem>
                       <SelectItem value="murs">Isolation des murs</SelectItem>
                       <SelectItem value="sols">Isolation des sols</SelectItem>
@@ -204,7 +228,7 @@ function FormSection({ onSubmit, register, errors, isSubmitting, setValue }: For
                   )}
                 </div>
 
-                <Button type="submit" className="w-full" size="lg" disabled={isSubmitting}>
+                <Button type="submit" className="w-full bg-gradient-to-r from-cyan-500 to-blue-600" size="lg" disabled={isSubmitting}>
                   {isSubmitting ? (
                     "Envoi en cours..."
                   ) : (
@@ -221,6 +245,47 @@ function FormSection({ onSubmit, register, errors, isSubmitting, setValue }: For
               </form>
             </CardContent>
           </Card>
+
+          <div className="space-y-6">
+            <div className="rounded-3xl border border-blue-100 bg-white p-6 shadow-xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.4em] text-cyan-500">
+                Pourquoi demander un devis ?
+              </p>
+              <h3 className="mt-3 text-2xl font-bold text-gray-900">
+                Un chargé d'affaires dédié vous répond en moins de 24h
+              </h3>
+              <ul className="mt-6 space-y-4">
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-cyan-500" />
+                  <span className="text-gray-700">Analyse de vos plans ou photos pour dimensionner le calorifugeage.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-cyan-500" />
+                  <span className="text-gray-700">Planning d'intervention et logistique atelier communiqués à l'avance.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-cyan-500" />
+                  <span className="text-gray-700">Option de préfabrication et pose de coquilles inox / aluminium.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="rounded-3xl bg-gradient-to-br from-blue-600 to-cyan-500 p-6 text-white shadow-2xl">
+              <p className="text-sm uppercase tracking-[0.4em] text-white/70">Besoin urgent ?</p>
+              <h3 className="mt-3 text-2xl font-bold">Isolation de tuyauteries industrielle en priorité</h3>
+              <p className="mt-3 text-white/80">
+                Hotline dédiée et équipes mobiles pour intervenir sur vos réseaux vapeur, eau glacée ou process critiques.
+              </p>
+              <div className="mt-5 space-y-2 text-sm">
+                <p>
+                  📞 <span className="font-semibold">+33 7 86 02 51 97</span>
+                </p>
+                <p>
+                  📧 <span className="font-semibold">contact@thercalenergies.com</span>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

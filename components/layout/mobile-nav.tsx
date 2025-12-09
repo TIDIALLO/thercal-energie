@@ -76,7 +76,7 @@ export function MobileNav() {
                         href="/services"
                         onClick={() => setIsOpen(false)}
                       >
-                        Isolation tuyauteries / bâtiment
+                        Isolation de tuyauteries industrielle
                       </SubNavItem>
                       <SubNavItem
                         href="/services/isolation-combles"
