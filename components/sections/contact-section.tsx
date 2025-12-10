@@ -68,14 +68,38 @@ function ContactForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simuler l'envoi du formulaire avec fichiers
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    console.log("Fichiers joints:", files);
-    setIsSubmitting(false);
-    setFiles([]);
-    alert("Message envoyé ! Nous vous répondrons dans les plus brefs délais.");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const payload = {
+      firstName: formData.get("firstName")?.toString().trim() || "",
+      lastName: formData.get("lastName")?.toString().trim() || "",
+      email: formData.get("email")?.toString().trim() || "",
+      phone: formData.get("phone")?.toString().trim() || "",
+      subject: formData.get("subject")?.toString().trim() || "",
+      message: formData.get("message")?.toString().trim() || "",
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        throw new Error("send_failed");
+      }
+
+      form.reset();
+      setFiles([]);
+      alert("Message envoyé ! Nous vous répondrons dans les plus brefs délais.");
+    } catch (error) {
+      console.error("Contact form error:", error);
+      alert("Erreur lors de l'envoi. Merci de réessayer ou de nous contacter par téléphone.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
