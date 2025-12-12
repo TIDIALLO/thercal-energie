@@ -137,11 +137,11 @@ function ValuesSection() {
   return (
     <div className="mx-auto mt-12 grid gap-5 rounded-3xl bg-white/90 p-6 shadow-lg ring-1 ring-blue-100 sm:grid-cols-3">
       {values.map(({ icon: Icon, title, description, colors, delay }) => (
-        <div
+    <div 
           key={title}
           className={`group relative flex flex-col items-center gap-3 rounded-2xl bg-gradient-to-br ${colors} p-6 text-center text-white shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:saturate-150`}
-          style={{ animationDelay: delay }}
-        >
+      style={{ animationDelay: delay }}
+    >
           <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15 backdrop-blur-md shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
             <Icon className="h-6 w-6" />
           </div>

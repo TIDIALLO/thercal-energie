@@ -35,12 +35,12 @@ export function Header() {
 function Logo() {
   return (
     <Link href="/" className="flex items-center group smooth-transition hover:scale-105">
-      <div className="relative h-11 w-auto">
+      <div className="relative h-14 w-auto">
         <Image
-          src="/thercal_energies_logo_blanc.png"
+          src="/logo_thercaenergies.png"
           alt="THERCAL ENERGIES - Expert en calorifugeage et isolation thermique"
-          width={160}
-          height={44}
+          width={200}
+          height={55}
           className="object-contain smooth-transition group-hover:brightness-110"
           priority
         />

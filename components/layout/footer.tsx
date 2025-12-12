@@ -32,7 +32,7 @@ function CompanyInfo() {
       <div className="group">
         <div className="relative h-8 w-auto smooth-transition group-hover:scale-105">
           <Image
-            src="/thercal_energies_logo.png"
+            src="/logo_thercaenergies.png"
             alt="THERCAL ENERGIES"
             width={100}
             height={32}

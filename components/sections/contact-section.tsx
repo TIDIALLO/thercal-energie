@@ -54,6 +54,7 @@ function SectionHeader() {
 function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [files, setFiles] = useState<File[]>([]);
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [focusedField, setFocusedField] = useState<string | null>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -80,11 +81,30 @@ function ContactForm() {
       message: formData.get("message")?.toString().trim() || "",
     };
 
+    // Prépare les pièces jointes en base64 (max 10 Mo chacune)
+    const maxSize = 10 * 1024 * 1024;
+    for (const f of files) {
+      if (f.size > maxSize) {
+        setStatus("error");
+        setIsSubmitting(false);
+        alert(`Le fichier ${f.name} dépasse 10 Mo.`);
+        return;
+      }
+    }
+
+    const attachments = await Promise.all(
+      files.map(async (file) => {
+        const buffer = await file.arrayBuffer();
+        const base64 = bufferToBase64(buffer);
+        return { filename: file.name, content: base64 };
+      })
+    );
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({ ...payload, attachments }),
       });
 
       if (!res.ok) {
@@ -93,10 +113,10 @@ function ContactForm() {
 
       form.reset();
       setFiles([]);
-      alert("Message envoyé ! Nous vous répondrons dans les plus brefs délais.");
+      setStatus("success");
     } catch (error) {
       console.error("Contact form error:", error);
-      alert("Erreur lors de l'envoi. Merci de réessayer ou de nous contacter par téléphone.");
+      setStatus("error");
     } finally {
       setIsSubmitting(false);
     }
@@ -263,10 +283,39 @@ function ContactForm() {
               </>
             )}
           </Button>
+
+          {status !== "idle" && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4">
+              <div className="w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl border border-blue-100 animate-fade-in-up">
+                <h4 className="text-xl font-bold text-gray-900 mb-2">
+                  {status === "success" ? "Message envoyé" : "Échec de l'envoi"}
+                </h4>
+                <p className="text-gray-700">
+                  {status === "success"
+                    ? "Merci, nous revenons vers vous sous 24h."
+                    : "Un problème est survenu. Réessayez ou contactez-nous au +33 7 86 02 51 97."}
+                </p>
+                <div className="mt-4 flex justify-end">
+                  <Button variant="outline" onClick={() => setStatus("idle")}>
+                    Fermer
+                  </Button>
+                </div>
+              </div>
+            </div>
+          )}
         </form>
       </CardContent>
     </Card>
   );
+}
+
+function bufferToBase64(buffer: ArrayBuffer): string {
+  const bytes = new Uint8Array(buffer);
+  let binary = "";
+  for (let i = 0; i < bytes.byteLength; i++) {
+    binary += String.fromCharCode(bytes[i]);
+  }
+  return btoa(binary);
 }
 
 function ContactInfo() {

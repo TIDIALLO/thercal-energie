@@ -40,7 +40,7 @@ export function MobileNav() {
               <DialogTitle className="flex items-center">
                 <div className="relative h-7 w-auto">
                   <Image
-                    src="/thercal_energies_logo.png"
+                    src="/logo_thercaenergies.png"
                     alt="THERCAL ENERGIES"
                     width={90}
                     height={28}
