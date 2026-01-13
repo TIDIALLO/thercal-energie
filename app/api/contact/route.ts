@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 const RESEND_ENDPOINT = "https://api.resend.com/emails";
 const TO = ["contact@thercalenergies.com"];
 const CC = ["pierre.dieng@thercalenergies.com", "radouane.salaly@thercalenergies.com"];
-const FROM = process.env.RESEND_FROM || "onboarding@resend.dev";
+const FROM = process.env.RESEND_FROM || "THERCAL ENERGIES <contact@thercalenergies.com>";
 
 export async function POST(request: Request) {
   try {
