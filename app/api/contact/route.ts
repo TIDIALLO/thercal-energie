@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 const RESEND_ENDPOINT = "https://api.resend.com/emails";
 const TO = ["contact@thercalenergies.com"];
-const BCC = ["pierre.dieng@thercalenergies.com", "radouane.salaly@thercalenergies.com"];
+const CC = ["pierre.dieng@thercalenergies.com", "radouane.salaly@thercalenergies.com"];
 const FROM = process.env.RESEND_FROM || "onboarding@resend.dev";
 
 export async function POST(request: Request) {
@@ -66,7 +66,7 @@ export async function POST(request: Request) {
       body: JSON.stringify({
         from: FROM,
         to: TO,
-        bcc: BCC,
+        cc: CC,
         reply_to: email,
         subject,
         html,
