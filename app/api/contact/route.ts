@@ -1,21 +1,28 @@
 import { NextResponse } from "next/server";
+import path from "path";
 
 const RESEND_ENDPOINT = "https://api.resend.com/emails";
 const TO = ["contact@thercalenergies.com"];
 const CC = ["pierre.dieng@thercalenergies.com", "radouane.salaly@thercalenergies.com"];
 const FROM = process.env.RESEND_FROM || "onboarding@resend.dev";
 
+async function loadEnvIfNeeded() {
+  // Charge .env.local seulement en dev et si la clé manque
+  if (process.env.NODE_ENV === "production" || process.env.RESEND_API_KEY) return;
+  try {
+    const envPath = path.join(process.cwd(), ".env.local");
+    const dotenv = await import("dotenv");
+    const result = dotenv.config({ path: envPath });
+    const loadedCount = Object.keys(result.parsed || {}).length;
+    console.info(`[contact] dotenv chargé (${loadedCount} entrées) depuis ${envPath}`);
+  } catch (err) {
+    console.warn("[contact] dotenv load failed in dev:", err);
+  }
+}
+
 export async function POST(request: Request) {
   try {
-    // Charge .env.local en dev si la variable manque (utile en local Windows)
-    if (!process.env.RESEND_API_KEY && process.env.NODE_ENV !== "production") {
-      try {
-        const dotenv = await import("dotenv");
-        dotenv.config({ path: ".env.local" });
-      } catch (err) {
-        console.warn("[contact] dotenv load failed in dev:", err);
-      }
-    }
+    await loadEnvIfNeeded();
 
     const apiKey = process.env.RESEND_API_KEY;
 
